@@ -9,7 +9,7 @@ An advanced Kotlin (Android Native) application that uses SOLID architectural pr
 # Flutter vs Native Android(Kotlin) vs Native IOS(Swift)
 This is part of my practical learning sprint to develop an application that has the exact same functionalities using 3 most competitive technologies, 
 
-# XD Preview of the User Interface Design]
+# XD Prototype of the user journey
 
 ![alt text](https://github.com/amosesuwali/Dog-Playground-Kotlin/blob/main/extras/ezgif-7-17c0c345db.gif)
 
