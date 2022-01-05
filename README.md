@@ -6,7 +6,7 @@ An advanced Kotlin (Android Native) application that uses SOLID architectural pr
 
 ![alt text](https://github.com/amosesuwali/Dog-Playground-Kotlin/blob/main/extras/xdUiV1.PNG)
 
-# Flutter vs Native Android(Kotlin) vs Native IOS(Swift)
+# Flutter(Hybrid) vs Native Android(Kotlin) vs Native IOS(Swift)
 This is part of my practical learning sprint to develop an application that has the exact same functionalities using 3 most competitive technologies, 
 
 # XD Prototype of the user journey
