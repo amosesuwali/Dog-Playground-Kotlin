@@ -19,7 +19,7 @@ private val moshi = Moshi.Builder()
 
 /**
  * Use the Retrofit builder to build a retrofit object using a Moshi converter with our Moshi
- * object.
+ * object. Thank
  */
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
