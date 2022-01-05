@@ -42,6 +42,17 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation "io.coil-kt:coil:1.1.1"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    // Moshi
+    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
+
+    // Retrofit with Moshi Converter
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+    // Coil
+    implementation "io.coil-kt:coil:1.1.1"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

@@ -11,7 +11,7 @@
         android:id="@+id/textview_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="end"
         android:lineHeight="@dimen/title_text_line_height"
         android:layout_margin="@dimen/next_button_margin"
         android:text="@string/title_text"
@@ -19,16 +19,36 @@
         android:textFontWeight="300"
         android:textSize="@dimen/title_text_font_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="p" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="@string/next"
         android:textColor="@color/black"
+        app:cornerRadius="@dimen/next_button_corner_radius"
         app:layout_constraintTop_toBottomOf="@id/textview_first"
         app:layout_constraintEnd_toEndOf="@id/textview_first"
-        android:layout_margin="@dimen/next_button_margin"/>
+        android:layout_marginTop="@dimen/next_button_margin"
+        android:layout_marginBottom="@dimen/next_button_margin"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="493dp"
+        tools:context=".MainActivity"
+        android:layout_marginTop="@dimen/next_button_margin"
+        app:layout_constraintTop_toBottomOf="@id/button_first" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager" />
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
