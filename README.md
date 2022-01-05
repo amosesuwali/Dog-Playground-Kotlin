@@ -1,13 +1,20 @@
 
 
-# Dog-Playground
+# Dog-Playground Kotlin
 
 An advanced Kotlin (Android Native) application that uses SOLID architectural principles, consumes a RESTFUL Service, downloads &amp; images using best practices.
+
+![alt text](https://github.com/amosesuwali/Dog-Playground-Kotlin/blob/main/extras/xdUiV1.PNG)
 
 # Flutter vs Native Android(Kotlin) vs Native IOS(Swift)
 This is part of my practical learning sprint to develop an application that has the exact same functionalities using 3 most competitive technologies, 
 
-# Special Thank to DOG CEO 
+# XD Preview of the User Interface Design]
+
+![alt text](https://github.com/amosesuwali/Dog-Playground-Kotlin/blob/main/extras/ezgif-7-17c0c345db.gif)
+
+Special Thanks to DOG CEO 
 The internet's biggest collection of open source dog pictures.
 https://github.com/ElliottLandsborough/dog-ceo-api
-![alt text](https://dog.ceo/img/dog-ceo-zine.jpg)
+
+
