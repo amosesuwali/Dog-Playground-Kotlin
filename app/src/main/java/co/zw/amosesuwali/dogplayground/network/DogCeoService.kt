@@ -34,10 +34,10 @@ interface DogCeoApiService {
      * The @GET annotation indicates that the "photos" endpoint will be requested with the GET
      * HTTP method
      */
-    @GET("hound/images")
+    @GET("breed/hound/images")
     suspend fun getPhotos(): List<Pictures>
 }
 
-object MarsApi {
+object DogCeoApi {
     val retrofitService: DogCeoApiService by lazy { retrofit.create(DogCeoApiService::class.java) }
 }
