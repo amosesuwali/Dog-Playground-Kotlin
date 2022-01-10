@@ -13,7 +13,7 @@ import co.zw.amosesuwali.dogplayground.models.Pictures
 * data, including computing diffs between lists.
 */
 class PhotoGridAdapter :
-    ListAdapter<Pictures, PhotoGridAdapter.MarsPhotosViewHolder>(DiffCallback) {
+    ListAdapter<List<String>, PhotoGridAdapter.MarsPhotosViewHolder>(DiffCallback) {
 
     /**
      * The MarsPhotosViewHolder constructor takes the binding variable from the associated
@@ -22,8 +22,8 @@ class PhotoGridAdapter :
     class MarsPhotosViewHolder(
         private var binding: BasicPictureItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(marsPhoto: Pictures) {
-            binding.photo = marsPhoto
+        fun bind(photoURL: String) {
+            binding.photo = photoURL
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
@@ -34,13 +34,13 @@ class PhotoGridAdapter :
      * Allows the RecyclerView to determine which items have changed when the [List] of
      * [MarsPhoto] has been updated.
      */
-    companion object DiffCallback : DiffUtil.ItemCallback<Pictures>() {
-        override fun areItemsTheSame(oldItem: Pictures, newItem: Pictures): Boolean {
-            return oldItem.imageList == newItem.imageList
+    companion object DiffCallback : DiffUtil.ItemCallback<List<String>>() {
+        override fun areItemsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
+            return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Pictures, newItem: Pictures): Boolean {
-            return oldItem.imageList == newItem.imageList
+        override fun areContentsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
+            return oldItem == newItem
         }
     }
 
@@ -60,7 +60,10 @@ class PhotoGridAdapter :
      * Replaces the contents of a view (invoked by the layout manager)
      */
     override fun onBindViewHolder(holder: MarsPhotosViewHolder, position: Int) {
-        val marsPhoto = getItem(position)
-        holder.bind(marsPhoto)
+        val pictureItem = getItem(position)
+        holder.bind(pictureItem[position])
     }
+
+
+
 }

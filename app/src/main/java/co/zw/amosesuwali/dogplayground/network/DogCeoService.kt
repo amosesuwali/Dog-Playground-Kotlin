@@ -35,7 +35,7 @@ interface DogCeoApiService {
      * HTTP method
      */
     @GET("breed/hound/images")
-    suspend fun getPhotos(): List<Pictures>
+    suspend fun getPhotos(): Pictures
 }
 
 object DogCeoApi {

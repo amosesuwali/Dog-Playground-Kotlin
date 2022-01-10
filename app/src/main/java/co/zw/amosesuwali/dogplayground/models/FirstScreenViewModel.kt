@@ -25,10 +25,10 @@ class FirstScreenViewModel : ViewModel() {
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
-    private val _photos = MutableLiveData<List<Pictures>>()
+    private val _photos = MutableLiveData<List<String>>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
-    val photos: LiveData<List<Pictures>> = _photos
+    val photos: LiveData<List<String>> = _photos
 
     /**
      * Call getMarsPhotos() on init so we can display status immediately.
@@ -46,9 +46,10 @@ class FirstScreenViewModel : ViewModel() {
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
-                _photos.value = DogCeoApi.retrofitService.getPhotos()
+                var pictureResponse: Pictures =DogCeoApi.retrofitService.getPhotos()
+                _photos.value = pictureResponse.imageList
                 _status.value = DogCeoApiStatus.DONE
-                Log.d("__________________", "__________________ SERVER RESPONSE___________")
+                Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 Log.d("__________________",_photos.value.toString())
             } catch (e: Exception) {
                 Log.d("__________________","__________________ FAILED RESPONSE___________")

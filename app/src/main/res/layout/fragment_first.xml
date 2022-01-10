@@ -41,30 +41,23 @@
         android:layout_marginBottom="@dimen/next_button_margin"
         />
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photos_grid"
         android:layout_width="match_parent"
-        android:layout_height="493dp"
-        android:layout_marginTop="@dimen/next_button_margin"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:layout_margin="@dimen/next_button_corner_radius"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_first"
-        tools:context=".MainActivity">
+        app:listData="@{viewModel.photos}"
+        app:spanCount="2"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:itemCount="16"
+        tools:listitem="@layout/basic_picture_item" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/photos_grid"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:padding="6dp"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:spanCount="2"
-            tools:itemCount="16"
-            tools:listitem="@layout/basic_picture_item" />
-
-    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

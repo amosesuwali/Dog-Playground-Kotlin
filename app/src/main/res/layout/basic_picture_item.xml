@@ -4,13 +4,16 @@
 <data>
     <variable
         name="photo"
-        type="co.zw.amosesuwali.dogplayground.models.Pictures" />
+        type="String" />
 </data>
 <ImageView
+    android:id="@+id/dogImageView"
     android:layout_width="wrap_content"
-    android:layout_height="170dp"
+    android:layout_height="wrap_content"
     android:scaleType="fitXY"
     android:adjustViewBounds="true"
     android:padding="2dp"
+    app:imageUrl="@{photo}"
+    tools:src="@tools:sample/backgrounds/scenic"
       />
 </layout>

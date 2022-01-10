@@ -22,7 +22,6 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = FragmentFirstBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
@@ -33,9 +32,7 @@ class FirstFragment : Fragment() {
 
         // Sets the adapter of the photosGrid RecyclerView
         binding.photosGrid.adapter = PhotoGridAdapter()
-        binding.buttonFirst.setOnClickListener {
-
-            viewModel.getMarsPhotos() }
+        binding.buttonFirst.setOnClickListener { viewModel.getMarsPhotos() }
         return binding.root
 
     }
