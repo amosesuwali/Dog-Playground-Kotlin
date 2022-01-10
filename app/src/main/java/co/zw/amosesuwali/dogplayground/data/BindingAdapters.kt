@@ -16,8 +16,9 @@ import coil.load
  * Updates the data shown in the [RecyclerView].
  */
 @BindingAdapter("listData")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<List<String>>?) {
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<String>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
+
     adapter.submitList(data)
 }
 

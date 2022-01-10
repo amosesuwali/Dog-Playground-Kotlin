@@ -13,7 +13,7 @@ import co.zw.amosesuwali.dogplayground.models.Pictures
 * data, including computing diffs between lists.
 */
 class PhotoGridAdapter :
-    ListAdapter<List<String>, PhotoGridAdapter.MarsPhotosViewHolder>(DiffCallback) {
+    ListAdapter<String, PhotoGridAdapter.MarsPhotosViewHolder>(DiffCallback) {
 
     /**
      * The MarsPhotosViewHolder constructor takes the binding variable from the associated
@@ -34,12 +34,12 @@ class PhotoGridAdapter :
      * Allows the RecyclerView to determine which items have changed when the [List] of
      * [MarsPhoto] has been updated.
      */
-    companion object DiffCallback : DiffUtil.ItemCallback<List<String>>() {
-        override fun areItemsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<String>() {
+        override fun areItemsTheSame(oldItem:String, newItem: String): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: List<String>, newItem: List<String>): Boolean {
+        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }
     }
@@ -61,7 +61,7 @@ class PhotoGridAdapter :
      */
     override fun onBindViewHolder(holder: MarsPhotosViewHolder, position: Int) {
         val pictureItem = getItem(position)
-        holder.bind(pictureItem[position])
+        holder.bind(pictureItem)
     }
 
 
