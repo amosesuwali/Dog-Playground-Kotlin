@@ -1,7 +1,10 @@
 package co.zw.amosesuwali.dogplayground.data
 
+import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -43,9 +46,22 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
+     var selectedBreeds : MutableList<String> = mutableListOf()
     override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
         val breedItem = getItem(position)
+        holder.itemView.setOnClickListener {
+
+            if (!selectedBreeds.contains(breedItem.breedName)) {
+                selectedBreeds.add(breedItem.breedName)
+                holder.itemView.setBackgroundColor(Color.GREEN)
+            }else{
+                selectedBreeds.remove(breedItem.breedName)
+                holder.itemView.setBackgroundColor(Color.WHITE)
+            }
+            Log.d("selectedBreedSize",selectedBreeds.size.toString())
+        }
         holder.bind(breedItem)
+
     }
 
 
