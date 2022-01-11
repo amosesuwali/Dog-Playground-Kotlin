@@ -12,18 +12,41 @@
         android:background="@color/white"
         android:orientation="horizontal"
         tools:context=".FirstFragment">
-<ImageView
-    android:id="@+id/dogImageView"
-    android:layout_width="50dp"
-    android:layout_height="wrap_content"
-    android:scaleType="fitXY"
-    android:adjustViewBounds="true"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:padding="2dp"
-    android:src="@drawable/dog"
-    tools:src="@tools:sample/backgrounds/scenic"
-      />
+        <RelativeLayout
+            android:id="@+id/dogImageView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Your main image view"
+                android:src="@drawable/dog"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/dogImageSelectionIcon"
+                android:contentDescription="Icon to be displayed after result"
+                android:src="@drawable/checkmark"
+                android:layout_margin="10dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+<!--<ImageView-->
+<!--    android:id="@+id/dogImageViewd"-->
+<!--    android:layout_width="50dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:scaleType="fitXY"-->
+<!--    android:adjustViewBounds="true"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:padding="2dp"-->
+<!--    android:src="@drawable/dog"-->
+<!--    tools:src="@tools:sample/backgrounds/scenic"-->
+<!--      />-->
 
         <TextView
             android:id="@+id/select_breed_label"
