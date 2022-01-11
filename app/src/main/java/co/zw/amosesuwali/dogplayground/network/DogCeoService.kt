@@ -1,5 +1,6 @@
 package co.zw.amosesuwali.dogplayground.network
 
+import co.zw.amosesuwali.dogplayground.models.DogBreeds
 import co.zw.amosesuwali.dogplayground.models.Pictures
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -34,8 +35,11 @@ interface DogCeoApiService {
      * The @GET annotation indicates that the "photos" endpoint will be requested with the GET
      * HTTP method
      */
-    @GET("breed/hound/images")
+    @GET("breed/hound/images/random/8")
     suspend fun getPhotos(): Pictures
+
+    @GET("breeds/list/all")
+    suspend fun getDogBreedList(): DogBreeds
 }
 
 object DogCeoApi {

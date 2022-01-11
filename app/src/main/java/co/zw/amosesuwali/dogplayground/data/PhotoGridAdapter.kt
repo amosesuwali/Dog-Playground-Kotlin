@@ -6,20 +6,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.zw.amosesuwali.dogplayground.databinding.BasicPictureItemBinding
-import co.zw.amosesuwali.dogplayground.models.Pictures
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+
+
+
 
 /**
 * This class implements a [RecyclerView] [ListAdapter] which uses Data Binding to present [List]
 * data, including computing diffs between lists.
 */
-class PhotoGridAdapter :
-    ListAdapter<String, PhotoGridAdapter.MarsPhotosViewHolder>(DiffCallback) {
+class PhotoGridAdapter : ListAdapter<String, PhotoGridAdapter.DogCeoViewHolder>(DiffCallback) {
 
     /**
-     * The MarsPhotosViewHolder constructor takes the binding variable from the associated
-     * GridViewItem, which nicely gives it access to the full [MarsPhoto] information.
+     * The DogCeoViewHolder constructor takes the binding variable from the associated
+     * GridViewItem, which nicely gives it access to the full photoURL information.
      */
-    class MarsPhotosViewHolder(
+    class DogCeoViewHolder(
         private var binding: BasicPictureItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(photoURL: String) {
@@ -27,12 +29,13 @@ class PhotoGridAdapter :
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
+
         }
     }
 
     /**
      * Allows the RecyclerView to determine which items have changed when the [List] of
-     * [MarsPhoto] has been updated.
+     * photoURL has been updated.
      */
     companion object DiffCallback : DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem:String, newItem: String): Boolean {
@@ -50,8 +53,8 @@ class PhotoGridAdapter :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MarsPhotosViewHolder {
-        return MarsPhotosViewHolder(
+    ): DogCeoViewHolder {
+        return DogCeoViewHolder(
             BasicPictureItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
@@ -59,7 +62,7 @@ class PhotoGridAdapter :
     /**
      * Replaces the contents of a view (invoked by the layout manager)
      */
-    override fun onBindViewHolder(holder: MarsPhotosViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DogCeoViewHolder, position: Int) {
         val pictureItem = getItem(position)
         holder.bind(pictureItem)
     }
