@@ -44,7 +44,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photos_grid"
         android:layout_width="match_parent"
-        android:layout_height="470dp"
+        android:layout_height="490dp"
         android:clipToPadding="false"
         android:layout_margin="@dimen/title_text_1x_margin"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
