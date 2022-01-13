@@ -29,5 +29,3 @@ Iapp/src/main/java/co/zw/amosesuwali/dogplayground/data/BindingAdapters.kt,8\8\
 Papp/src/main/java/co/zw/amosesuwali/dogplayground/models/FirstScreenViewModel.kt,3\a\3a801987117fe4c5500f6028e9f98eb3319ccd09
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/PhotoGridAdapter.kt,1\b\1bcc3004b8ba762e8b54973eaad9b976f3e2f2b2
-z
-Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/BreedListAdapter.kt,7\9\792cf1c43c6f010ecd713ff5ae7d15d30891ab4c
