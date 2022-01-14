@@ -19,8 +19,6 @@ t
 Dapp/src/main/java/co/zw/amosesuwali/dogplayground/models/Pictures.kt,4\1\418e679abc490112063981a8044c202ec28db9a8
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogCeoService.kt,8\8\8828d02467bbe32a00afa9c6303054c89ca0f689
-s
-Capp/src/main/java/co/zw/amosesuwali/dogplayground/SelectFavBreed.kt,c\b\cb59703a695e961522a0d12027e5f561a70319aa
 ƒ
 Sapp/src/main/java/co/zw/amosesuwali/dogplayground/models/SelectFavBreedViewModel.kt,6\9\69e88d3ace2412428181965b61944789e3986357
 y
