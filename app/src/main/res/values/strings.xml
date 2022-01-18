@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Dog Playground</string>
     <string name="title_text">Dog\nPlayground</string>
+    <string name="select_breed_label_text">Select your favourites breeds</string>
+    <string name="search_breed_label_text">Search breeds</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

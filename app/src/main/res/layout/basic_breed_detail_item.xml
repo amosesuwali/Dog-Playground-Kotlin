@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="breed"
+        type="co.zw.amosesuwali.dogplayground.models.BreedDetailModel" />
+</data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        tools:context=".FirstFragment">
+        <RelativeLayout
+            android:id="@+id/dogImageView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Your main image view"
+                android:src="@drawable/dog"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/dogImageSelectionIcon"
+                android:contentDescription="Icon to be displayed after result"
+                android:src="@drawable/checkmark"
+                android:layout_margin="10dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+<!--<ImageView-->
+<!--    android:id="@+id/dogImageViewd"-->
+<!--    android:layout_width="50dp"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:scaleType="fitXY"-->
+<!--    android:adjustViewBounds="true"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent"-->
+<!--    android:padding="2dp"-->
+<!--    android:src="@drawable/dog"-->
+<!--    tools:src="@tools:sample/backgrounds/scenic"-->
+<!--      />-->
+
+        <TextView
+            android:id="@+id/select_breed_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/title_text_1x_margin"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:lineHeight="@dimen/title_text_line_height"
+            android:text="@{breed.breedName}"
+            android:hint="@string/select_breed_label_text"
+            android:textColor="@color/black"
+            android:textFontWeight="30"
+            android:textSize="@dimen/select_breed_label_text_font_size"
+            app:layout_constraintStart_toEndOf="@id/dogImageView"
+            app:layout_constraintTop_toTopOf="@id/dogImageView"
+            tools:targetApi="p" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
