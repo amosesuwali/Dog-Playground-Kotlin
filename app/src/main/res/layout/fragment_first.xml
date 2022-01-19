@@ -43,18 +43,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photos_grid"
-        android:layout_width="match_parent"
-        android:layout_height="490dp"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
         android:clipToPadding="false"
         android:layout_margin="@dimen/title_text_1x_margin"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_first"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:listData="@{viewModel.photos}"
         app:spanCount="2"
         tools:ignore="SpeakableTextPresentCheck"
         tools:itemCount="16"
+        android:rotation="6"
+        android:rotationY="6"
         tools:listitem="@layout/basic_picture_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

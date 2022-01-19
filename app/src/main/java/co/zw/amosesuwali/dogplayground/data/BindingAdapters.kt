@@ -20,6 +20,7 @@ import coil.load
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<String>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
+//recyclerView.layoutParams=(RecyclerView.LayoutParams(recyclerView.layoutParams.width+ 20, recyclerView.layoutParams.height))
 
     adapter.submitList(data)
 }
