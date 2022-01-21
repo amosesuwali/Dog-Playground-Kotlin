@@ -50,9 +50,9 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
     }
      var selectedBreeds : MutableList<String> = mutableListOf()
     override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
-        val breedItem = getItem(position)
+        val breedItem = getItem(holder.adapterPosition)
+        Log.d("holder",holder.toString())
         holder.itemView.setOnClickListener {
-
             if (!selectedBreeds.contains(breedItem.breedName)) {
                 selectedBreeds.add(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.GREEN)
