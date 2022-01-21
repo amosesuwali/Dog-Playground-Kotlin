@@ -43,7 +43,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photos_grid"
-        android:layout_width="450dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:layout_margin="@dimen/title_text_1x_margin"
@@ -56,8 +56,8 @@
         app:spanCount="2"
         tools:ignore="SpeakableTextPresentCheck"
         tools:itemCount="16"
-        android:rotation="6"
-        android:rotationY="6"
+        android:rotationX="0"
+        android:rotationY="3"
         tools:listitem="@layout/basic_picture_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

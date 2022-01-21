@@ -49,7 +49,6 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 @BindingAdapter("breedImageUrl")
 fun bindBreedImage(imgView: ImageView, imgUrl: BreedRandomResponse?) {
     imgUrl?.let {
-
         val imgUri = imgUrl.message.toUri().buildUpon().scheme("https").build()
         imgView.load(imgUri) {
             placeholder(R.drawable.loading_animation)
