@@ -53,14 +53,14 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         val breedItem = getItem(holder.adapterPosition)
         Log.d("holder",holder.toString())
         holder.itemView.setOnClickListener {
-//            if (!selectedBreeds.contains(breedItem.breedName)) {
-//                selectedBreeds.add(breedItem.breedName)
-//                holder.itemView.setBackgroundColor(Color.GREEN)
-//                holder.itemView.visibility = View.VISIBLE;
-//            }else{
-//                selectedBreeds.remove(breedItem.breedName)
-//                holder.itemView.setBackgroundColor(Color.WHITE)
-//            }
+            if (!selectedBreeds.contains(breedItem.breedName)) {
+                selectedBreeds.add(breedItem.breedName)
+                holder.itemView.setBackgroundColor(Color.GREEN)
+                holder.itemView.visibility = View.VISIBLE;
+            }else{
+                selectedBreeds.remove(breedItem.breedName)
+                holder.itemView.setBackgroundColor(Color.WHITE)
+            }
             Log.d("selectedBreedSize",selectedBreeds.size.toString())
         }
         holder.bind(breedItem)
