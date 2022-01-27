@@ -34,14 +34,14 @@ class FirstScreenViewModel : ViewModel() {
      * Call getMarsPhotos() on init so we can display status immediately.
      */
     init {
-        getMarsPhotos()
+        getDogPhotos()
     }
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      * [MarsPhoto] [List] [LiveData].
      */
-    public fun getMarsPhotos() {
+     fun getDogPhotos() {
         Log.d("__________________", "__________________ We are doing so,___________")
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
