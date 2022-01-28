@@ -24,7 +24,7 @@ class SelectFavBreedViewModel : ViewModel() {
 
     // The external LiveData interface to the property is immutable, so only this class can modify
     val dogBreeds: LiveData<List<BreedDetailModel>> = _dogBreeds
-
+    lateinit var selectedBreeds: LiveData<String>
     /**
      * Call getMarsPhotos() on init so we can display status immediately.
      */
