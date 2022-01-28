@@ -29,14 +29,14 @@ class SelectFavBreedViewModel : ViewModel() {
      * Call getMarsPhotos() on init so we can display status immediately.
      */
     init {
-        getDogBreeds()
+        getDogBreedsList()
     }
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      * [MarsPhoto] [List] [LiveData].
      */
-    private fun getDogBreeds() {
+    private fun getDogBreedsList() {
         Log.d("__________________", "__________________ We fetching breeds doing so,___________")
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
