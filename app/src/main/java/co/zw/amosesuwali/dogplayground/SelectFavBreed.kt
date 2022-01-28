@@ -34,12 +34,15 @@ class SelectFavBreed : Fragment() {
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         binding.lifecycleOwner = this
 
+
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
         // Sets the adapter of the photosGrid RecyclerView
         binding.photosGrid.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.photosGrid.adapter = BreedListAdapter()
+//        viewModel.selectedBreeds=
+        binding.selectedBreeds = viewModel.selectedBreeds.value?.length.toString()
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }

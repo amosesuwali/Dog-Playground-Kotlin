@@ -17,6 +17,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * This class implements a [RecyclerView] [ListAdapter] which uses Data Binding to present [List]
 * data, including computing diffs between lists.
 */
+var selectedBreeds : MutableList<String> = mutableListOf()
 class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
     class BreedDetailViewHolder(
@@ -48,7 +49,7 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
-     var selectedBreeds : MutableList<String> = mutableListOf()
+
     override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
         val breedItem = getItem(holder.adapterPosition)
         Log.d("holder",holder.toString())

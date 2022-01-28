@@ -2,6 +2,7 @@ package co.zw.amosesuwali.dogplayground.data
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
@@ -31,6 +32,10 @@ fun bindBreedRecyclerView(recyclerView: RecyclerView, data: List<BreedDetailMode
     adapter.submitList(data)
 }
 
+@BindingAdapter("selectedFavBreedsCount")
+fun bindSelectedFavBreeds(selectedFavBreedsCountView: TextView, data: Int?) {
+    selectedFavBreedsCountView.text=data.toString()
+}
 
 /**
  * Uses the Coil library to load an image by URL into an [ImageView]

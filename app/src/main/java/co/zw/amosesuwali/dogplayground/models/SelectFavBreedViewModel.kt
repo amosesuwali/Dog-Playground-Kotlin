@@ -24,7 +24,7 @@ class SelectFavBreedViewModel : ViewModel() {
 
     // The external LiveData interface to the property is immutable, so only this class can modify
     val dogBreeds: LiveData<List<BreedDetailModel>> = _dogBreeds
-    lateinit var selectedBreeds: LiveData<String>
+    var selectedBreeds: MutableLiveData<String> =MutableLiveData<String>("0")
     /**
      * Call getMarsPhotos() on init so we can display status immediately.
      */
@@ -47,6 +47,7 @@ class SelectFavBreedViewModel : ViewModel() {
                 for (dogBreed in dogBreedsResponse.breedType::class.memberProperties) {
                     tempList.add(BreedDetailModel(dogBreed.name, "https://images.dog.ceo/breeds/buhund-norwegian/hakon3.jpg"))
                 }
+                selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
                 _status.value = DogCeoApiStatus.DONE
 
