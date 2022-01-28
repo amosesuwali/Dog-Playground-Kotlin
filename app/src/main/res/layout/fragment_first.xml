@@ -12,54 +12,70 @@
     android:background="@color/black"
     tools:context=".FirstFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:lineHeight="@dimen/title_text_line_height"
-        android:layout_margin="@dimen/title_text_1x_margin"
-        android:text="@string/title_text"
-        android:textColor="@color/white"
-        android:textFontWeight="300"
-        android:textSize="@dimen/title_text_font_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="p" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="@string/next"
-        android:textColor="@color/black"
-        app:cornerRadius="@dimen/next_button_corner_radius"
-        app:layout_constraintTop_toBottomOf="@id/textview_first"
-        app:layout_constraintEnd_toEndOf="@id/textview_first"
-        android:layout_marginTop="@dimen/title_text_1x_margin"
-        android:layout_marginBottom="@dimen/title_text_half_margin"
-        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/photos_grid"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:layout_margin="@dimen/title_text_1x_margin"
+        android:nestedScrollingEnabled="false"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:translationZ="-90dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_first"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:listData="@{viewModel.photos}"
         app:spanCount="2"
         tools:ignore="SpeakableTextPresentCheck"
         tools:itemCount="16"
-        android:rotationX="0"
-        android:rotationY="3"
         tools:listitem="@layout/basic_picture_item" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textTitleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="40sp"
+        android:paddingBottom="40sp"
+        android:background="#D50C0C0C"
+        app:cornerRadius="@dimen/next_button_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/title_text_1x_margin"
+            android:gravity="end"
+            android:lineHeight="@dimen/title_text_line_height"
+            android:text="@string/title_text"
+            android:textColor="@color/white"
+            android:textFontWeight="300"
+            android:textSize="@dimen/title_text_font_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="p" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/title_text_1x_margin"
+            android:layout_marginBottom="@dimen/title_text_half_margin"
+            android:backgroundTint="@color/white"
+            android:text="@string/next"
+            android:textColor="@color/black"
+            app:cornerRadius="@dimen/next_button_corner_radius"
+            app:layout_constraintEnd_toEndOf="@id/textview_first"
+            app:layout_constraintTop_toBottomOf="@id/textview_first" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

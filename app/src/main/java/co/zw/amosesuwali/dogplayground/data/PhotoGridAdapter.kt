@@ -33,6 +33,15 @@ class PhotoGridAdapter : ListAdapter<String, PhotoGridAdapter.DogCeoViewHolder>(
         }
     }
 
+//    recyclerView.setLayoutManager(new LinearLayoutManager(this){
+//        @Override
+//        public boolean checkLayoutParams(RecyclerView.LayoutParams lp) {
+//            // force height of viewHolder here, this will override layout_height from xml
+//            lp.height = getHeight() / 3;
+//            return true;
+//        }
+//    });
+
     /**
      * Allows the RecyclerView to determine which items have changed when the [List] of
      * photoURL has been updated.

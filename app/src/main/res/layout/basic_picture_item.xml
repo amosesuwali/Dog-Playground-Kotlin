@@ -12,6 +12,8 @@
     android:layout_height="wrap_content"
     android:scaleType="fitXY"
     android:adjustViewBounds="true"
+    app:tint="#636763"
+    android:tintMode="multiply"
     android:padding="2dp"
     app:imageUrl="@{photo}"
     tools:src="@tools:sample/backgrounds/scenic"

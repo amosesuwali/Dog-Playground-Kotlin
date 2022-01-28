@@ -38,7 +38,7 @@ interface DogCeoApiService {
      * The @GET annotation indicates that the "photos" endpoint will be requested with the GET
      * HTTP method
      */
-    @GET("breeds/image/random/8")
+    @GET("breeds/image/random/16")
     suspend fun getPhotos(): Pictures
 
     @GET("breeds/list/all")

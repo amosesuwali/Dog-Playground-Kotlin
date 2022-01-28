@@ -1,5 +1,6 @@
 package co.zw.amosesuwali.dogplayground
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,10 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.data.PhotoGridAdapter
 import co.zw.amosesuwali.dogplayground.databinding.FragmentFirstBinding
 import co.zw.amosesuwali.dogplayground.models.FirstScreenViewModel
+import android.util.DisplayMetrics
+
+
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -33,7 +38,9 @@ class FirstFragment : Fragment() {
         binding.viewModel = viewModel
 
         // Sets the adapter of the photosGrid RecyclerView
-        binding.photosGrid.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
+        binding.photosGrid.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
+        Log.d("__________________Width",Resources.getSystem().displayMetrics.widthPixels.toString())
+        binding.photosGrid.layoutParams.width = Resources.getSystem().displayMetrics.widthPixels + (Resources.getSystem().displayMetrics.widthPixels*(0.3)).toInt()
         binding.photosGrid.adapter = PhotoGridAdapter()
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_selectFavBreed)
