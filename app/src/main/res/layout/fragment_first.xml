@@ -36,7 +36,7 @@
         android:textColor="@color/black"
         app:cornerRadius="@dimen/next_button_corner_radius"
         app:layout_constraintTop_toBottomOf="@id/textview_first"
-        app:layout_constraintEnd_toEndOf="@id/textview_first"
+        app:lazyout_constraintEnd_toEndOf="@id/textview_first"
         android:layout_marginTop="@dimen/title_text_1x_margin"
         android:layout_marginBottom="@dimen/title_text_half_margin"
         />
