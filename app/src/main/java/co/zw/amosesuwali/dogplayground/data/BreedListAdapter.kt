@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +18,12 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * This class implements a [RecyclerView] [ListAdapter] which uses Data Binding to present [List]
 * data, including computing diffs between lists.
 */
-var selectedBreeds : MutableList<String> = mutableListOf()
+
 class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
+     var selectedBreeds = MutableLiveData<MutableList<String>> ()
     class BreedDetailViewHolder(
-        private var binding: BasicBreedDetailItemBinding
+    private var binding: BasicBreedDetailItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(breed: BreedDetailModel) {
             binding.breed = breed
@@ -45,6 +47,7 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         parent: ViewGroup,
         viewType: Int
     ): BreedDetailViewHolder {
+        selectedBreeds.value= mutableListOf()
         return BreedDetailViewHolder(
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
@@ -54,15 +57,16 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         val breedItem = getItem(holder.adapterPosition)
         Log.d("holder",holder.toString())
         holder.itemView.setOnClickListener {
-            if (!selectedBreeds.contains(breedItem.breedName)) {
-                selectedBreeds.add(breedItem.breedName)
+
+            if (!selectedBreeds.value?.contains(breedItem.breedName)!!) {
+                selectedBreeds.value?.add(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.GREEN)
                 holder.itemView.visibility = View.VISIBLE;
             }else{
-                selectedBreeds.remove(breedItem.breedName)
+                selectedBreeds.value?.remove(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.WHITE)
             }
-            Log.d("selectedBreedSize",selectedBreeds.size.toString())
+            Log.d("selectedBreedSize",selectedBreeds.value?.size.toString())
         }
         holder.bind(breedItem)
 
