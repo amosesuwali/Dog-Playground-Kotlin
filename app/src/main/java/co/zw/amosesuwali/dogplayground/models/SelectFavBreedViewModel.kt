@@ -60,20 +60,4 @@ class SelectFavBreedViewModel : ViewModel() {
         }
     }
 
-    public fun getDogBreedImage(dogBreed: String) : String{
-        Log.d("__________________", "GETTING_RANDOM_BREED")
-        var breedImageURL:String =""
-        viewModelScope.launch {
-            try {
-                var breedRandomImageResponse: BreedRandomResponse = DogCeoApi.retrofitService.getDogBreedRandomImage(dogBreed)
-                breedImageURL =  breedRandomImageResponse.message
-            } catch (e: Exception) {
-                Log.d("__________________","FAILED_GETTING_RANDOM_BREED_IMAGE_RESPONSE")
-                Log.d("__________________",e.message.toString())
-            }
-
-        }
-        return breedImageURL
-
-    }
 }
