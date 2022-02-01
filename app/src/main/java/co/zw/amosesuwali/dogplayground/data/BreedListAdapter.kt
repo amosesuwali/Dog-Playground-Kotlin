@@ -20,7 +20,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
      var selectedBreeds = MutableLiveData<MutableList<String>> ()
-     var selectedBreedsCount = MutableLiveData<String> ()
+     var selectedBreedsCount = MutableLiveData<String> ("0")
     class BreedDetailViewHolder(
     private var binding: BasicBreedDetailItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -46,7 +46,7 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         parent: ViewGroup,
         viewType: Int
     ): BreedDetailViewHolder {
-        selectedBreeds.value= mutableListOf("")
+        selectedBreeds.value= mutableListOf()
         return BreedDetailViewHolder(
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
@@ -57,10 +57,10 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         Log.d("holder",holder.toString())
         holder.itemView.setOnClickListener {
 
-            if (!selectedBreeds.value?.contains(breedItem.breedName)!!) {
+            if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
                 selectedBreeds.value?.add(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.GREEN)
-                holder.itemView.visibility = View.VISIBLE;
+                holder.itemView.visibility = View.VISIBLE
             }else{
                 selectedBreeds.value?.remove(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.WHITE)
