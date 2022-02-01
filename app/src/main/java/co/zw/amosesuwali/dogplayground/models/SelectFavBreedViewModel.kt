@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
-import co.zw.amosesuwali.dogplayground.network.BASE_URL
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.launch
 import kotlin.reflect.full.memberProperties
