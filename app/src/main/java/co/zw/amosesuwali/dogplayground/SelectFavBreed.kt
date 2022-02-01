@@ -35,14 +35,13 @@ class SelectFavBreed : Fragment() {
         binding.lifecycleOwner = this
 
 
+        // Sets the adapter of the photosGrid RecyclerView
+        binding.photosGrid.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        binding.photosGrid.adapter = viewModel.dogListAdapter
+
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
-        // Sets the adapter of the photosGrid RecyclerView
-        binding.photosGrid.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        val listAdapter = BreedListAdapter()
-        binding.photosGrid.adapter = listAdapter
-        binding.selectedBreeds = listAdapter.selectedBreeds.value?.size.toString() // viewModel.selectedBreeds.value?.length.toString()
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }

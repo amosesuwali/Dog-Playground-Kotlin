@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
 import co.zw.amosesuwali.dogplayground.network.BASE_URL
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.launch
@@ -15,8 +16,10 @@ class SelectFavBreedViewModel : ViewModel() {
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<DogCeoApiStatus>()
 
+    val dogListAdapter= BreedListAdapter()
     // The external immutable LiveData for the request status
     val status: LiveData<DogCeoApiStatus> = _status
+    val selectedBreedsCount: MutableLiveData<String> = dogListAdapter.selectedBreedsCount
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
@@ -24,7 +27,7 @@ class SelectFavBreedViewModel : ViewModel() {
 
     // The external LiveData interface to the property is immutable, so only this class can modify
     val dogBreeds: LiveData<List<BreedDetailModel>> = _dogBreeds
-    var selectedBreeds: MutableLiveData<String> =MutableLiveData<String>("0")
+    val selectedBreeds =MutableLiveData<String>("0")
     /**
      * Call getMarsPhotos() on init so we can display status immediately.
      */
@@ -43,7 +46,7 @@ class SelectFavBreedViewModel : ViewModel() {
             try {
                 var dogBreedsResponse: DogBreeds = DogCeoApi.retrofitService.getDogBreedList()
                 Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
-                val tempList : MutableList<BreedDetailModel> = mutableListOf<BreedDetailModel>()
+                val tempList = mutableListOf<BreedDetailModel>()
                 for (dogBreed in dogBreedsResponse.breedType::class.memberProperties) {
                     tempList.add(BreedDetailModel(dogBreed.name, "https://images.dog.ceo/breeds/buhund-norwegian/hakon3.jpg"))
                 }

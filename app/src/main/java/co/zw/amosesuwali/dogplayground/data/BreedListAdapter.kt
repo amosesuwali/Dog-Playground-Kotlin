@@ -5,8 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -22,6 +20,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
      var selectedBreeds = MutableLiveData<MutableList<String>> ()
+     var selectedBreedsCount = MutableLiveData<String> ()
     class BreedDetailViewHolder(
     private var binding: BasicBreedDetailItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -47,7 +46,7 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         parent: ViewGroup,
         viewType: Int
     ): BreedDetailViewHolder {
-        selectedBreeds.value= mutableListOf()
+        selectedBreeds.value= mutableListOf("")
         return BreedDetailViewHolder(
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
@@ -66,6 +65,8 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
                 selectedBreeds.value?.remove(breedItem.breedName)
                 holder.itemView.setBackgroundColor(Color.WHITE)
             }
+
+            selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
             Log.d("selectedBreedSize",selectedBreeds.value?.size.toString())
         }
         holder.bind(breedItem)
