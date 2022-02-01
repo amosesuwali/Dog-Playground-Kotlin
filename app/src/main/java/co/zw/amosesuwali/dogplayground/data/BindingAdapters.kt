@@ -5,14 +5,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import co.zw.amosesuwali.dogplayground.R
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.DogCeoApiStatus
-import co.zw.amosesuwali.dogplayground.models.Pictures
 import coil.load
 
 /**
@@ -33,7 +30,7 @@ fun bindBreedRecyclerView(recyclerView: RecyclerView, data: List<BreedDetailMode
 }
 
 @BindingAdapter("selectedFavBreedsCount")
-fun bindSelectedFavBreeds(selectedFavBreedsCountView: TextView, data: Int?) {
+fun bindSelectedFavBreeds(selectedFavBreedsCountView: TextView, data: String?) {
     selectedFavBreedsCountView.text=data.toString()
 }
 
