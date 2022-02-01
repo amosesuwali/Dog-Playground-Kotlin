@@ -52,18 +52,25 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         )
     }
 
+
     override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
         val breedItem = getItem(holder.adapterPosition)
         Log.d("holder",holder.toString())
+        Log.d("breedItem",breedItem.toString())
+        Log.d("breedItem",breedItem.toString())
+        Log.d("holder.adapterPosition",holder.adapterPosition.toString())
+
+
         holder.itemView.setOnClickListener {
+
 
             if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
                 selectedBreeds.value?.add(breedItem.breedName)
-                holder.itemView.setBackgroundColor(Color.GREEN)
-                holder.itemView.visibility = View.VISIBLE
+                it.setBackgroundColor(Color.GREEN)
+                it.visibility = View.VISIBLE
             }else{
                 selectedBreeds.value?.remove(breedItem.breedName)
-                holder.itemView.setBackgroundColor(Color.WHITE)
+                it.setBackgroundColor(Color.WHITE)
             }
 
             selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
