@@ -12,7 +12,7 @@
     android:layout_height="wrap_content"
     android:scaleType="fitXY"
     android:adjustViewBounds="true"
-    app:tint="#636763"
+    app:tint="#4D534D"
     android:tintMode="multiply"
     android:padding="2dp"
     app:imageUrl="@{photo}"

@@ -2,6 +2,7 @@
     <dimen name="fab_margin">16sp</dimen>
     <dimen name="title_text_line_height">52sp</dimen>
     <dimen name="title_text_font_size">42sp</dimen>
+    <dimen name="subtitle_text_font_size">16sp</dimen>
     <dimen name="title_text_half_margin">6sp</dimen>
     <dimen name="title_text_1x_margin">12sp</dimen>
     <dimen name="title_FromCenterBottom_Large_margin">162sp</dimen>
