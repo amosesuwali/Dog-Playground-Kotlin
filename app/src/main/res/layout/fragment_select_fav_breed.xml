@@ -41,10 +41,9 @@
                 android:gravity="start"
                 android:lineHeight="@dimen/title_text_line_height"
                 android:text="@string/select_breed_label_text"
-                android:textColor="@color/black"
+                android:textColor="@color/mediumGray"
                 android:textFontWeight="30"
                 android:textSize="@dimen/select_breed_label_text_font_size"
-
                 tools:targetApi="p" />
             <TextView
                 android:id="@+id/SelectedCount"
@@ -56,6 +55,20 @@
                 android:text=" "
                 app:selectedFavBreedsCount="@{viewModel.selectedBreedsCount}"
                 android:textColor="@color/black"
+                android:textFontWeight="500"
+                android:textSize="@dimen/select_breed_label_text_font_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_first"
+                tools:targetApi="p" />
+            <TextView
+                android:id="@+id/TotalBreedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:lineHeight="@dimen/title_text_line_height"
+                android:text=" "
+                app:totalFavBreedsCount="@{viewModel.totalBreedsCount}"
+                android:textColor="@color/mediumGray"
                 android:textFontWeight="30"
                 android:textSize="@dimen/select_breed_label_text_font_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,12 +84,11 @@
             android:textColorHint="#BFBABA"
             android:textColor="@color/black"
             android:textFontWeight="30"
-            android:background="@drawable/edit_text_border"
+            android:background="@drawable/basic_edit_border"
             android:layout_margin="@dimen/title_text_1x_margin"
             android:textSize="@dimen/textview_hint_font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_breed_label"
-
             tools:targetApi="p" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_first"
@@ -92,9 +104,8 @@
             android:layout_marginTop="@dimen/title_text_1x_margin"
             android:layout_marginBottom="@dimen/title_text_1x_margin"
             />
-
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/photos_grid"
+            android:id="@+id/breed_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -103,9 +114,8 @@
             android:layout_margin="@dimen/title_text_1x_margin"
             app:spanCount="2"
             tools:ignore="SpeakableTextPresentCheck"
-            tools:itemCount="16"
+            tools:itemCount="86"
             tools:listitem="@layout/basic_breed_detail_item" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
