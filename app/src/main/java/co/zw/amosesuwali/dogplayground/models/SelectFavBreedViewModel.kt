@@ -19,6 +19,7 @@ class SelectFavBreedViewModel : ViewModel() {
     // The external immutable LiveData for the request status
     val status: LiveData<DogCeoApiStatus> = _status
     val selectedBreedsCount: MutableLiveData<String> = dogListAdapter.selectedBreedsCount
+    val totalBreedsCount=MutableLiveData<String>("0")
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
@@ -52,7 +53,7 @@ class SelectFavBreedViewModel : ViewModel() {
                 selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
                 _status.value = DogCeoApiStatus.DONE
-
+                totalBreedsCount.value=tempList.size.toString()
             } catch (e: Exception) {
                 Log.d("__________________","__________________ FAILED RESPONSE___________")
                 Log.d("__________________",e.message.toString())
