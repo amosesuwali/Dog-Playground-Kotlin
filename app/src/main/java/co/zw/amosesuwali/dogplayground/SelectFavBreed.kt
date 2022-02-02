@@ -1,5 +1,7 @@
 package co.zw.amosesuwali.dogplayground
 
+import android.R.attr
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.models.SelectFavBreedViewModel
+import androidx.recyclerview.widget.RecyclerView
+
+import androidx.annotation.DimenRes
+
+import androidx.annotation.NonNull
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import android.R.attr.spacing
+import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 
 
 class SelectFavBreed : Fragment() {
@@ -31,9 +41,15 @@ class SelectFavBreed : Fragment() {
         binding.lifecycleOwner = this
 
         // Sets the adapter of the photosGrid RecyclerView
-        binding.photosGrid.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        binding.photosGrid.adapter = viewModel.dogListAdapter
-
+        binding.breedGrid.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        binding.breedGrid.adapter = viewModel.dogListAdapter
+        binding.breedGrid.addItemDecoration(
+            GridSpacingItemDecorationHelper(
+                2,
+                50,
+                true
+            )
+        )
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
 
@@ -43,3 +59,5 @@ class SelectFavBreed : Fragment() {
         return binding.root
     }
 }
+
+
