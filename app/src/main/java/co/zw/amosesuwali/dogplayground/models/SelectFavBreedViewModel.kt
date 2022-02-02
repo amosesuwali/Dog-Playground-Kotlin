@@ -24,6 +24,7 @@ class SelectFavBreedViewModel : ViewModel() {
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
     // with new values
     private val _dogBreeds = MutableLiveData<List<BreedDetailModel>>()
+    private val _dogBreedsLive = MutableLiveData<List<BreedDetailModel>>()
 
     // The external LiveData interface to the property is immutable, so only this class can modify
     val dogBreeds: LiveData<List<BreedDetailModel>> = _dogBreeds
@@ -37,14 +38,14 @@ class SelectFavBreedViewModel : ViewModel() {
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [MarsPhoto] [List] [LiveData].
+     * [BreedType] [List] [LiveData].
      */
     private fun getDogBreedsList() {
         Log.d("__________________", "__________________ We fetching breeds doing so,___________")
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
-                var dogBreedsResponse: DogBreeds = DogCeoApi.retrofitService.getDogBreedList()
+                val dogBreedsResponse: DogBreeds = DogCeoApi.retrofitService.getDogBreedList()
                 Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val tempList = mutableListOf<BreedDetailModel>()
                 for (dogBreed in dogBreedsResponse.breedType::class.memberProperties) {
@@ -52,6 +53,7 @@ class SelectFavBreedViewModel : ViewModel() {
                 }
                 selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
+                _dogBreedsLive.value=tempList
                 _status.value = DogCeoApiStatus.DONE
                 totalBreedsCount.value=tempList.size.toString()
             } catch (e: Exception) {
@@ -63,4 +65,12 @@ class SelectFavBreedViewModel : ViewModel() {
         }
     }
 
+
+     fun searchBreedFromFavList(breed:CharSequence){
+         if(breed.isNotEmpty()){
+             _dogBreeds.value=_dogBreeds.value?.filter { it.breedName.contains(breed,true) }
+         }else{
+             _dogBreeds.value= _dogBreedsLive.value
+         }
+    }
 }
