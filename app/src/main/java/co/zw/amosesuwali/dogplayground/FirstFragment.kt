@@ -14,8 +14,7 @@ import co.zw.amosesuwali.dogplayground.data.PhotoGridAdapter
 import co.zw.amosesuwali.dogplayground.databinding.FragmentFirstBinding
 import co.zw.amosesuwali.dogplayground.models.FirstScreenViewModel
 import android.util.DisplayMetrics
-
-
+import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 
 
 /**
@@ -42,6 +41,13 @@ class FirstFragment : Fragment() {
         Log.d("__________________Width",Resources.getSystem().displayMetrics.widthPixels.toString())
         binding.photosGrid.layoutParams.width = Resources.getSystem().displayMetrics.widthPixels + (Resources.getSystem().displayMetrics.widthPixels*(0.3)).toInt()
         binding.photosGrid.adapter = PhotoGridAdapter()
+        binding.photosGrid.addItemDecoration(
+            GridSpacingItemDecorationHelper(
+                5,
+                5,
+                true
+            )
+        )
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_selectFavBreed)
         }
