@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_selectFavBreed"
             app:destination="@id/selectFavBreed" />
+        <action
+            android:id="@+id/action_FirstFragment_to_dashboard"
+            app:destination="@id/dashboard" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -33,5 +36,13 @@
         <action
             android:id="@+id/action_selectFavBreed_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_selectFavBreed_to_dashboard"
+            app:destination="@id/dashboard" />
     </fragment>
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="co.zw.amosesuwali.dogplayground.Dashboard"
+        android:label="dashboard_fragment"
+        tools:layout="@layout/dashboard_fragment" />
 </navigation>
