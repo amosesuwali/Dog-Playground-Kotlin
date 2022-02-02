@@ -64,6 +64,7 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
 
             if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
                 selectedBreeds.value?.add(breedItem.breedName)
+
                 it.setBackgroundColor(Color.GREEN)
                 it.visibility = View.VISIBLE
             }else{

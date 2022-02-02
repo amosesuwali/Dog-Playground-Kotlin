@@ -10,4 +10,6 @@
     <dimen name="textview_hint_font_size">12sp</dimen>
     <dimen name="next_button_margin">22sp</dimen>
     <dimen name="next_button_corner_radius">14sp</dimen>
+    <dimen name="breed_listview_margin">15sp</dimen>
+    <dimen name="basic_view_margin">15sp</dimen>
 </resources>

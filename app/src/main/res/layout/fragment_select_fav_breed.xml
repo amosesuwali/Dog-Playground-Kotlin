@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:layout_margin="@dimen/basic_view_margin"
         tools:context=".FirstFragment">
 
         <TextView
@@ -30,6 +31,7 @@
             android:id="@+id/select_breed_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/title_text_1x_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_first"
             android:orientation="horizontal">
@@ -38,7 +40,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:lineHeight="@dimen/title_text_line_height"
-                android:layout_margin="@dimen/title_text_1x_margin"
                 android:text="@string/select_breed_label_text"
                 android:textColor="@color/black"
                 android:textFontWeight="30"
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:lineHeight="@dimen/title_text_line_height"
-                android:layout_margin="@dimen/title_text_1x_margin"
+                android:layout_marginLeft="@dimen/title_text_1x_margin"
                 android:text=" "
                 app:selectedFavBreedsCount="@{viewModel.selectedBreedsCount}"
                 android:textColor="@color/black"
@@ -66,14 +67,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lineHeight="@dimen/title_text_line_height"
-            android:layout_margin="@dimen/title_text_1x_margin"
             android:hint="@string/search_breed_label_text"
-            android:textColorHint="@color/design_default_color_primary_dark"
+            android:textColorHint="#BFBABA"
             android:textColor="@color/black"
             android:textFontWeight="30"
+            android:background="@drawable/edit_text_border"
+            android:layout_margin="@dimen/title_text_1x_margin"
             android:textSize="@dimen/textview_hint_font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_breed_label"
+
             tools:targetApi="p" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_first"
@@ -94,10 +97,10 @@
             android:id="@+id/photos_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/title_text_half_margin"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/button_first"
             app:breedListData="@{viewModel.dogBreeds}"
+            android:layout_margin="@dimen/title_text_1x_margin"
             app:spanCount="2"
             tools:ignore="SpeakableTextPresentCheck"
             tools:itemCount="16"

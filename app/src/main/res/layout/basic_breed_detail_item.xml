@@ -35,19 +35,6 @@
                 />
 
         </RelativeLayout>
-<!--<ImageView-->
-<!--    android:id="@+id/dogImageViewd"-->
-<!--    android:layout_width="50dp"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:scaleType="fitXY"-->
-<!--    android:adjustViewBounds="true"-->
-<!--    app:layout_constraintStart_toStartOf="parent"-->
-<!--    app:layout_constraintTop_toTopOf="parent"-->
-<!--    android:padding="2dp"-->
-<!--    android:src="@drawable/dog"-->
-<!--    tools:src="@tools:sample/backgrounds/scenic"-->
-<!--      />-->
-
         <TextView
             android:id="@+id/select_breed_label"
             android:layout_width="wrap_content"
