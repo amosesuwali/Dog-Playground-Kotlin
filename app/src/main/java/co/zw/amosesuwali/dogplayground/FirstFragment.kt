@@ -27,7 +27,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentFirstBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
@@ -45,7 +45,7 @@ class FirstFragment : Fragment() {
             GridSpacingItemDecorationHelper(
                 5,
                 5,
-                true
+                false
             )
         )
         binding.buttonFirst.setOnClickListener {

@@ -47,7 +47,7 @@ class SelectFavBreed : Fragment() {
             GridSpacingItemDecorationHelper(
                 2,
                 50,
-                true
+                false
             )
         )
         // Giving the binding access to the OverviewViewModel

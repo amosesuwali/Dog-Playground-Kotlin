@@ -1,14 +1,20 @@
 package co.zw.amosesuwali.dogplayground.data
 
+import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import co.zw.amosesuwali.dogplayground.R
 import co.zw.amosesuwali.dogplayground.databinding.BasicBreedDetailItemBinding
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 
@@ -17,7 +23,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * data, including computing diffs between lists.
 */
 
-class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
+class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
      var selectedBreeds = MutableLiveData<MutableList<String>> ()
      var selectedBreedsCount = MutableLiveData<String> ("0")
@@ -61,15 +67,17 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
         Log.d("holder.adapterPosition",holder.adapterPosition.toString())
 
         holder.itemView.setOnClickListener {
+            val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
+            val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
             if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
                 selectedBreeds.value?.add(breedItem.breedName)
 
-                it.setBackgroundColor(Color.GREEN)
+                it.background=selectedBreedDecoration
                 it.visibility = View.VISIBLE
             }else{
                 selectedBreeds.value?.remove(breedItem.breedName)
-                it.setBackgroundColor(Color.WHITE)
+                it.background=unselectedBreedDecoration
             }
 
             selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
@@ -80,5 +88,10 @@ class BreedListAdapter : ListAdapter<BreedDetailModel, BreedListAdapter.BreedDet
     }
 
 
+    private var context: Context? = null
 
+    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
+        super.onAttachedToRecyclerView(recyclerView)
+        context = recyclerView.context
+    }
 }
