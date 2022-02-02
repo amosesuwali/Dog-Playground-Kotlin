@@ -1,7 +1,5 @@
 package co.zw.amosesuwali.dogplayground
 
-import android.R.attr
-import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
-import co.zw.amosesuwali.dogplayground.models.SelectFavBreedViewModel
-import androidx.recyclerview.widget.RecyclerView
-
-import androidx.annotation.DimenRes
-
-import androidx.annotation.NonNull
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-import android.R.attr.spacing
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
+import co.zw.amosesuwali.dogplayground.models.SelectFavBreedViewModel
 
 
 class SelectFavBreed : Fragment() {
@@ -54,7 +45,7 @@ class SelectFavBreed : Fragment() {
         binding.viewModel = viewModel
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
         }
         return binding.root
     }
