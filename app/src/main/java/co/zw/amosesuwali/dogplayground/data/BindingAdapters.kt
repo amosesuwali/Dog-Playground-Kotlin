@@ -29,9 +29,14 @@ fun bindBreedRecyclerView(recyclerView: RecyclerView, data: List<BreedDetailMode
     adapter.submitList(data)
 }
 
+
 @BindingAdapter("selectedFavBreedsCount")
 fun bindSelectedFavBreeds(selectedFavBreedsCountView: TextView, data: String?) {
     selectedFavBreedsCountView.text=data.toString()
+}
+@BindingAdapter("totalFavBreedsCount")
+fun bindTotalFavBreedsCount(totalFavBreedsCount: TextView, data: String?) {
+    totalFavBreedsCount.text=" out of "+data.toString()
 }
 
 /**

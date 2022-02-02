@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/breed_listview_margin">
 <data>
     <variable
         name="breed"
@@ -9,23 +10,23 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:orientation="horizontal"
+        android:background="@drawable/breed_item_border"
         tools:context=".FirstFragment">
         <RelativeLayout
             android:id="@+id/dogImageView"
             android:layout_width="50dp"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="Your main image view"
-                android:src="@drawable/dog"/>
+            android:layout_height="50dp">
 
             <ImageView
                 android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
+                android:contentDescription="Your main image view"
+                android:src="@drawable/dog" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/dogImageSelectionIcon"
                 android:contentDescription="Icon to be displayed after result"
                 android:src="@drawable/checkmark"
@@ -38,9 +39,8 @@
         <TextView
             android:id="@+id/select_breed_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:layout_margin="@dimen/title_text_1x_margin"
-            android:layout_marginTop="12dp"
             android:gravity="start"
             android:lineHeight="@dimen/title_text_line_height"
             android:text="@{breed.breedName}"
