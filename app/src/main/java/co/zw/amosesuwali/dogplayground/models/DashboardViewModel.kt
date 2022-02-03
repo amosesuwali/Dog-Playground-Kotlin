@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground
+package co.zw.amosesuwali.dogplayground.models
 
 import androidx.lifecycle.ViewModel
 
