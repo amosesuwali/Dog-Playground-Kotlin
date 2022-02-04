@@ -13,6 +13,7 @@
         android:orientation="horizontal"
         android:background="@drawable/breed_item_border"
         tools:context=".MainActivity">
+
         <androidx.cardview.widget.CardView
             android:layout_width="55sp"
             android:layout_height="55sp"
@@ -29,7 +30,6 @@
                     android:layout_width="55sp"
                     android:layout_height="55sp"
                     android:contentDescription="Your favourite breed image"
-                    android:padding="@dimen/breed_icon_padding"
                     app:imageUrl="@{breedImageURL}"
                     android:scaleType="centerCrop"/>
 
