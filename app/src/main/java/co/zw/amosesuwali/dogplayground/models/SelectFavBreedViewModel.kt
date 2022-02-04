@@ -57,10 +57,8 @@ class SelectFavBreedViewModel : ViewModel() {
                 _status.value = DogCeoApiStatus.DONE
                 totalBreedsCount.value=tempList.size.toString()
             } catch (e: Exception) {
-                Log.d("__________________","__________________ FAILED RESPONSE___________")
                 Log.d("__________________",e.message.toString())
                 _status.value = DogCeoApiStatus.ERROR
-                _dogBreeds.value = null
             }
         }
     }
