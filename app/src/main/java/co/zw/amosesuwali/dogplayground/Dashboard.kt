@@ -40,7 +40,7 @@ class Dashboard : Fragment() {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = dashboardViewModel
         binding.favouriteBreedList.adapter=dashboardViewModel.favBreedsListAdapter
-        return inflater.inflate(R.layout.dashboard_fragment, container, false)
+        return binding.root
     }
 
 
