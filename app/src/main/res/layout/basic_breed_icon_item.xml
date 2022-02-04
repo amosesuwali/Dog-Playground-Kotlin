@@ -13,12 +13,29 @@
         android:orientation="horizontal"
         android:background="@drawable/breed_item_border"
         tools:context=".MainActivity">
-        <ImageView
+        <androidx.cardview.widget.CardView
             android:layout_width="55sp"
             android:layout_height="55sp"
-            android:contentDescription="Your favourite breed image"
-            android:padding="@dimen/breed_icon_padding"
-            app:imageUrl="@{breedImageURL}" />
+            app:cardCornerRadius="250dp"
+            app:cardBackgroundColor="@color/white">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="55sp"
+                android:layout_height="55sp"
+                app:cardCornerRadius="150dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="55sp"
+                    android:layout_height="55sp"
+                    android:contentDescription="Your favourite breed image"
+                    android:padding="@dimen/breed_icon_padding"
+                    app:imageUrl="@{breedImageURL}"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
 
