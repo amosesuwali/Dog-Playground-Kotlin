@@ -1,8 +1,0 @@
-
-C	java:S108V")Either remove or fill this block of code.(‰¬›Áÿÿÿÿÿ
-<	java:S131V""Add a default case to this switch.(‰¬›Áÿÿÿÿÿ
-J
-java:S1066i"/Merge this if statement with the enclosing one.(îªÿ±ýÿÿÿÿ
-f	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ÄÞâ
-f
-java:S1301V"KReplace this "switch" statement by "if" statements to increase readability.(‰¬›Áÿÿÿÿÿ

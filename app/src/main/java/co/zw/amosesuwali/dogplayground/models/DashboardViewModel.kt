@@ -16,7 +16,7 @@ class DashboardViewModel : ViewModel() {
     }
 
     private fun getSavedFavouriteBreeds(){
-        _favouriteDogBreeds.value =  mutableListOf<BreedDetailModel>(
+        _favouriteDogBreeds.value =  mutableListOf(
             BreedDetailModel("Pitbull","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
             BreedDetailModel("Rotwiller","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
             BreedDetailModel("Africa","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),

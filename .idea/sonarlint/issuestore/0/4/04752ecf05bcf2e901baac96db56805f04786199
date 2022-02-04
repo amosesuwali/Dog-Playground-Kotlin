@@ -1,8 +1,0 @@
-
-<	java:S131Z""Add a default case to this switch.(‰¬›Áÿÿÿÿÿ
-L
-java:S1172`"6Remove this unused method parameter "ViewModelPhotos".(ÃÊŠ
-k	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÏ¬êýÿÿÿÿ
-f	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÊŠ
-f
-java:S1301Z"KReplace this "switch" statement by "if" statements to increase readability.(‰¬›Áÿÿÿÿÿ
