@@ -1,29 +1,28 @@
 <resources>
-    /*
-        Basic View Dimension
-    */
+
+    <!--Basic View Dimension-->
     <dimen name="basic_view_margin">15sp</dimen>
     <dimen name="fab_margin">16sp</dimen>
 
-    /*
-        Text Dimension
-    */
+    <!-- Text Dimension-->
     <dimen name="title_text_line_height">52sp</dimen>
     <dimen name="title_text_font_size">42sp</dimen>
     <dimen name="subtitle_text_font_size">16sp</dimen>
-
     <dimen name="title_text_half_margin">6sp</dimen>
     <dimen name="title_text_1x_margin">18sp</dimen>
     <dimen name="title_FromCenterBottom_Large_margin">162sp</dimen>
     <dimen name="select_breed_label_text_font_size">16sp</dimen>
     <dimen name="textview_hint_font_size">12sp</dimen>
+
+    <!--Buttons Dimensions-->
     <dimen name="next_button_margin">22sp</dimen>
     <dimen name="next_button_corner_radius">14sp</dimen>
 
-    /*
-        List Dimension
-    */
+
+    <!-- List Dimension-->
+
     <dimen name="breed_listview_margin">15sp</dimen>
     <dimen name="breed_icon_padding">10sp</dimen>
+    <dimen name="breed_icon_margin">5sp</dimen>
 
 </resources>
