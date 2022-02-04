@@ -67,6 +67,7 @@ class SelectFavBreedViewModel : ViewModel() {
 
 
      fun searchBreedFromFavList(breed:CharSequence){
+         _dogBreeds.value= _dogBreedsLive.value
          if(breed.isNotEmpty()){
              _dogBreeds.value=_dogBreeds.value?.filter { it.breedName.contains(breed,true) }
          }else{
