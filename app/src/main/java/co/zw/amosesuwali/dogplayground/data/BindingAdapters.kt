@@ -85,3 +85,4 @@ fun bindStatus(statusImageView: ImageView, status: DogCeoApiStatus?) {
         }
     }
 }
+
