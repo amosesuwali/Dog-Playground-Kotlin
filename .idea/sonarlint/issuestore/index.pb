@@ -13,8 +13,6 @@ z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/BreedListAdapter.kt,7\9\792cf1c43c6f010ecd713ff5ae7d15d30891ab4c
 s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2\e\2e5f6ee949ac5883023c70bcef3a488b29e8246f
-ƒ
-Sapp/src/main/java/co/zw/amosesuwali/dogplayground/models/SelectFavBreedViewModel.kt,6\9\69e88d3ace2412428181965b61944789e3986357
 _
 /app/src/main/res/drawable/breed_item_border.xml,c\b\cb89da15cb4c13a56d034dad1bb114900a918e59
 ‡
