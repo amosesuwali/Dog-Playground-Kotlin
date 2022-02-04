@@ -6,6 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import co.zw.amosesuwali.dogplayground.databinding.DashboardFragmentBinding
+import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
+import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.DashboardViewModel
 
 class Dashboard : Fragment() {
@@ -14,19 +19,29 @@ class Dashboard : Fragment() {
         fun newInstance() = Dashboard()
     }
 
-    private lateinit var viewModel: DashboardViewModel
+    private val dashboardViewModel: DashboardViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val binding = DashboardFragmentBinding.inflate(inflater)
+        binding.lifecycleOwner = this
+//        binding.favouriteBreedList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
+
+        binding.favouriteBreedList.addItemDecoration(
+            GridSpacingItemDecorationHelper(
+                2,
+                20,
+                false
+            )
+        )
+        // Giving the binding access to the OverviewViewModel
+        binding.viewModel = dashboardViewModel
+        binding.favouriteBreedList.adapter=dashboardViewModel.favBreedsListAdapter
         return inflater.inflate(R.layout.dashboard_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
