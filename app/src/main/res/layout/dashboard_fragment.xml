@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="80sp"
             app:spanCount="5"
-            app:breedListData="@{viewModel.favouriteDogBreeds}"
+            app:favBreedListData="@{viewModel.favouriteDogBreeds}"
             tools:ignore="SpeakableTextPresentCheck"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

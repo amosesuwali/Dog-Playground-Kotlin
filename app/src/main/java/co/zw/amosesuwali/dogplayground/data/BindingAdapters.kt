@@ -86,3 +86,10 @@ fun bindStatus(statusImageView: ImageView, status: DogCeoApiStatus?) {
     }
 }
 
+
+//Favourite Breed Icons Binding Adapter
+@BindingAdapter("favBreedListData")
+fun bindFavBreedIconRecyclerView(recyclerView: RecyclerView, data: List<BreedDetailModel>?) {
+    val adapter = recyclerView.adapter as FavBreedIconListAdapter
+    adapter.submitList(data)
+}

@@ -24,15 +24,15 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * data, including computing diffs between lists.
 */
 
-class FavBreedIconListAdapter(): ListAdapter<BreedDetailModel, FavBreedIconListAdapter.BreedDetailViewHolder>(DiffCallback) {
+class FavBreedIconListAdapter(): ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(DiffCallback) {
 
      var selectedBreeds = MutableLiveData<MutableList<String>> ()
      var selectedBreedsCount = MutableLiveData<String> ("0")
-    class BreedDetailViewHolder(
+    class FavBreedIconViewHolder(
     private var binding: BasicBreedIconItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(breed: BreedDetailModel) {
-            binding.breed = breed
+            binding.breedImageURL = breed.breedImageURL
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
@@ -52,37 +52,19 @@ class FavBreedIconListAdapter(): ListAdapter<BreedDetailModel, FavBreedIconListA
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): BreedDetailViewHolder {
+    ): FavBreedIconViewHolder {
         selectedBreeds.value= mutableListOf()
-        return BreedDetailViewHolder(
+        return FavBreedIconViewHolder(
             BasicBreedIconItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
 
 
-    override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavBreedIconViewHolder, position: Int) {
         val breedItem = getItem(holder.adapterPosition)
-        Log.d("holder",holder.toString())
-        Log.d("breedItem",breedItem.toString())
-        Log.d("holder.adapterPosition",holder.adapterPosition.toString())
-
         holder.itemView.setOnClickListener {
-            val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
-            val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
-            if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
-                selectedBreeds.value?.add(breedItem.breedName)
-
-                it.background=selectedBreedDecoration
-                it.visibility = View.VISIBLE
-            }else{
-                selectedBreeds.value?.remove(breedItem.breedName)
-                it.background=unselectedBreedDecoration
-            }
-
-            selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
-            Log.d("selectedBreedSize",selectedBreeds.value?.size.toString())
         }
         holder.bind(breedItem)
 

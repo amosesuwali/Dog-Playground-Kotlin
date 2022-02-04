@@ -1,25 +1,24 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/breed_icon_margin">
+    android:layout_margin="@dimen/breed_listview_margin">
 <data>
     <variable
-        name="breed"
-        type="co.zw.amosesuwali.dogplayground.models.BreedDetailModel" />
+        name="breedImageURL"
+        type="String" />
 </data>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/breed_item_border"
-
         tools:context=".MainActivity">
         <ImageView
             android:layout_width="55sp"
             android:layout_height="55sp"
             android:contentDescription="Your favourite breed image"
             android:padding="@dimen/breed_icon_padding"
-            android:src="@drawable/dog" />
+            app:imageUrl="@{breedImageURL}" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
 
