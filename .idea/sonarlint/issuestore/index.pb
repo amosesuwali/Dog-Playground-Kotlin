@@ -13,8 +13,6 @@ z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/BreedListAdapter.kt,7\9\792cf1c43c6f010ecd713ff5ae7d15d30891ab4c
 s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2\e\2e5f6ee949ac5883023c70bcef3a488b29e8246f
-_
-/app/src/main/res/drawable/breed_item_border.xml,c\b\cb89da15cb4c13a56d034dad1bb114900a918e59
 ‡
 Wapp/build/generated/source/kapt/debug/androidx/databinding/library/baseAdapters/BR.java,7\6\76ab311dfee7472a496576d4cf93884eead08891
 ¢
@@ -45,8 +43,6 @@ R
 "app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
-R
-"app/src/main/res/values/dimens.xml,c\3\c3c1811dec2dbad2deeafb9aad505ca9631da740
 h
 8app/src/main/res/drawable-v24/ic_launcher_foreground.xml,0\7\078508c831007ccb3938b355f0d30a8368f99a8d
 W
@@ -91,16 +87,12 @@ kapp/build/generated/source/kapt/debug/co/zw/amosesuwali/dogplayground/generated
 ]app/build/generated/source/buildConfig/debug/co/zw/amosesuwali/dogplayground/BuildConfig.java,7\e\7ec9bd4b0c90ae070779485dca8015440780a6c6
 ¦
 vapp/build/generated/source/kapt/debug/co/zw/amosesuwali/dogplayground/databinding/BasicBreedDetailItemBindingImpl.java,d\e\de6e1fa38fb69bb318c4cf13a186d82e2275a188
-c
-3app/src/main/res/layout/basic_breed_detail_item.xml,6\6\66880be17e7a3d3e097e97c83ef43fd4a28bc3da
 u
 Eapp/src/main/java/co/zw/amosesuwali/dogplayground/models/DogBreeds.kt,c\b\cbf2c583e8ef089d0a88755efffa01af83251293
 u
 Eapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedType.kt,d\a\da474e3875b5e61a8ca36d8ad7536953563edc46
 „
 Tapp/build/generated/source/kapt/debug/androidx/databinding/DataBindingComponent.java,4\d\4dfd8e78262786139d9c3841ac30649331c119b6
-^
-.app/src/main/res/layout/basic_picture_item.xml,9\2\9297c4a883375fda41d9e43e72ea77f0f34293a4
 „
 Tapp/build/generated/source/kapt/debug/androidx/databinding/DataBinderMapperImpl.java,9\1\91e625c255bb6db6f8e3aa385e5a0197757d70f8
 Y
