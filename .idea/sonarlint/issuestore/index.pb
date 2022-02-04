@@ -1,16 +1,8 @@
 
-y
-Iapp/src/main/java/co/zw/amosesuwali/dogplayground/data/BindingAdapters.kt,8\8\8865f7235b083ef6627620ac6e2787ce8a150171
 å
 \app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/GridSpacingItemDecorationHelper.kt,a\3\a3f08fcd0970bbe6aa7419e1bb6ac224f043a932
-|
-Lapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedDetailModel.kt,a\6\a62e61a6ec3fedf435bf29be5f535af44c6ff0f3
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/PhotoGridAdapter.kt,1\b\1bcc3004b8ba762e8b54973eaad9b976f3e2f2b2
-r
-Bapp/src/main/java/co/zw/amosesuwali/dogplayground/FirstFragment.kt,c\5\c59ffbddc52cc993d34197d6394dc4ae26e1a390
-z
-Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/BreedListAdapter.kt,7\9\792cf1c43c6f010ecd713ff5ae7d15d30891ab4c
 s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2\e\2e5f6ee949ac5883023c70bcef3a488b29e8246f
 á
@@ -41,16 +33,10 @@ d
 4app/src/main/res/drawable/ic_launcher_background.xml,4\9\49845c622cb06d895975c7b1e3f943e320bce688
 R
 "app/src/main/res/values/themes.xml,e\b\eb7f0f821bde169dd21862705b2b042d2cea69a3
-S
-#app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
 h
 8app/src/main/res/drawable-v24/ic_launcher_foreground.xml,0\7\078508c831007ccb3938b355f0d30a8368f99a8d
-W
-'app/src/main/res/values-land/dimens.xml,e\8\e8fe653669acbc46bcb1330f4532eee3bf9ac4c3
 X
 (app/src/main/res/values-night/themes.xml,8\c\8c3a6b96d9ffba496992e612d58227c19e6b9e65
-Z
-*app/src/main/res/values-w1240dp/dimens.xml,a\0\a0ad08e8d3c264f872dc06b86e81ee2c65f22062
 Y
 )app/src/main/res/values-w600dp/dimens.xml,d\d\dd50348f0e0e40d34f7eef693f331545006a3150
 h
@@ -79,8 +65,6 @@ h
 Oapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedRandomResponse.kt,c\5\c524b8c682226ba4eddd23584833db574c714f79
 t
 Dapp/src/main/java/co/zw/amosesuwali/dogplayground/models/Pictures.kt,4\1\418e679abc490112063981a8044c202ec28db9a8
-Ä
-Papp/src/main/java/co/zw/amosesuwali/dogplayground/models/FirstScreenViewModel.kt,3\a\3a801987117fe4c5500f6028e9f98eb3319ccd09
 õ
 kapp/build/generated/source/kapt/debug/co/zw/amosesuwali/dogplayground/generated/callback/OnTextChanged.java,9\3\93c4b14dc4cba3d252dde948752472feea4c0335
 ç
