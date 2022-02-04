@@ -1,0 +1,24 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/breed_listview_margin">
+<data>
+    <variable
+        name="breed"
+        type="co.zw.amosesuwali.dogplayground.models.BreedDetailModel" />
+</data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="55sp"
+        android:layout_height="55sp"
+        android:orientation="horizontal"
+        android:background="@drawable/breed_item_border"
+        android:layout_margin="@dimen/title_text_1x_margin"
+        tools:context=".FirstFragment">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Your favourite breed image"
+            android:padding="@dimen/breed_icon_padding"
+            android:src="@drawable/dog" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
