@@ -29,8 +29,10 @@
                 <ImageView
                     android:layout_width="55sp"
                     android:layout_height="55sp"
-                    android:contentDescription="Your favourite breed image"
+                    android:contentDescription="@string/alt_text_images_default"
                     app:imageUrl="@{breedImageURL}"
+                    app:tint="#A7A8A8"
+                    android:tintMode="multiply"
                     android:scaleType="centerCrop"/>
 
             </androidx.cardview.widget.CardView>
