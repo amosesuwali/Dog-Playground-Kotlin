@@ -1,15 +1,12 @@
 package co.zw.amosesuwali.dogplayground
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.databinding.DashboardFragmentBinding
-import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.DashboardViewModel
 
