@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import co.zw.amosesuwali.dogplayground.databinding.BasicPictureItemBinding
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-
-
 
 
 /**
