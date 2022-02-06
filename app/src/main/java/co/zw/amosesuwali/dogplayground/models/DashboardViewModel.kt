@@ -14,11 +14,12 @@ class DashboardViewModel : ViewModel() {
     }
 
     private fun getSavedFavouriteBreeds(){
+        val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
         _favouriteDogBreeds.value =  mutableListOf(
-            BreedDetailModel("Pitbull","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
-            BreedDetailModel("Rotwiller","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
-            BreedDetailModel("Africa","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
-            BreedDetailModel("Chihuahua","https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"),
+            BreedDetailModel("Pitbull",tempUrl),
+            BreedDetailModel("Rotwiller",tempUrl),
+            BreedDetailModel("Africa",tempUrl),
+            BreedDetailModel("Chihuahua",tempUrl),
         )
     }
 
