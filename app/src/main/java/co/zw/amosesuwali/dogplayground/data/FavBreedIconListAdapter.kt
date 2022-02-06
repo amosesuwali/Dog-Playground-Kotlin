@@ -1,21 +1,12 @@
 package co.zw.amosesuwali.dogplayground.data
 
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import co.zw.amosesuwali.dogplayground.R
-import co.zw.amosesuwali.dogplayground.databinding.BasicBreedDetailItemBinding
 import co.zw.amosesuwali.dogplayground.databinding.BasicBreedIconItemBinding
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 
