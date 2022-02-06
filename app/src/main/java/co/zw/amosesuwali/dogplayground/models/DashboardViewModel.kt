@@ -2,9 +2,7 @@ package co.zw.amosesuwali.dogplayground.models
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
 import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
-import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 
 class DashboardViewModel : ViewModel() {
 
