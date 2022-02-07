@@ -1,15 +1,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/breed_listview_margin">
+    xmlns:tools="http://schemas.android.com/tools" >
 <data>
     <variable
         name="breedImageURL"
         type="String" />
 </data>
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55sp"
+        android:layout_height="55sp"
         android:orientation="horizontal"
         android:background="@drawable/fav_breed_icon"
         tools:context=".MainActivity">
