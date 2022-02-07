@@ -51,7 +51,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/play_button">
+                android:background="@drawable/game_bg">
                 <TextView
                     android:id="@+id/textview_playGame"
                     android:layout_width="match_parent"
@@ -61,10 +61,11 @@
                     android:lineHeight="@dimen/title_text_line_height"
                     android:text="@string/game_intro_title_text"
                     android:textColor="@color/black"
-                    android:textFontWeight="300"
+                    android:textFontWeight="700"
                     android:textSize="@dimen/title_text_font_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/white"
                     tools:targetApi="p" />
                 <TextView
                     android:id="@+id/textview_second"
