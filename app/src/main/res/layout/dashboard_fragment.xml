@@ -95,7 +95,8 @@
                     android:textFontWeight="100"
                     app:cornerRadius="@dimen/next_button_corner_radius"
                     app:layout_constraintStart_toStartOf="@id/textview_playGame"
-                    app:layout_constraintTop_toBottomOf="@id/textview_second" />
+                    app:layout_constraintTop_toBottomOf="@id/textview_second"
+                    tools:targetApi="p" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -157,7 +158,8 @@
                     android:textFontWeight="100"
                     app:cornerRadius="@dimen/next_button_corner_radius"
                     app:layout_constraintStart_toStartOf="@id/button_firstgg"
-                    app:layout_constraintTop_toBottomOf="@id/textview_secondgg" />
+                    app:layout_constraintTop_toBottomOf="@id/textview_secondgg"
+                    tools:targetApi="p" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
