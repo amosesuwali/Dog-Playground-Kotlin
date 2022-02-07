@@ -39,7 +39,62 @@
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/basic_breed_icon_item"/>
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="@dimen/title_text_1x_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favouriteBreedList"
+            android:id="@+id/playGameCard"
+            app:cardBackgroundColor="@color/white">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/play_button">
+                <TextView
+                    android:id="@+id/textview_playGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/title_text_1x_margin"
+                    android:gravity="start"
+                    android:lineHeight="@dimen/title_text_line_height"
+                    android:text="@string/game_intro_title_text"
+                    android:textColor="@color/black"
+                    android:textFontWeight="300"
+                    android:textSize="@dimen/title_text_font_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="p" />
+                <TextView
+                    android:id="@+id/textview_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/title_text_1x_margin"
+                    android:gravity="start"
+                    android:text="@string/game_intro_subtitle_text"
+                    android:textColor="@color/black"
+                    android:textFontWeight="100"
+                    android:textSize="@dimen/subtitle_text_font_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_playGame"
+                    tools:targetApi="p" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25sp"
+                    android:layout_marginBottom="@dimen/title_text_half_margin"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/start"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/subtitle_text_font_size"
+                    android:textFontWeight="100"
+                    app:cornerRadius="@dimen/next_button_corner_radius"
+                    app:layout_constraintStart_toStartOf="@id/textview_playGame"
+                    app:layout_constraintTop_toBottomOf="@id/textview_second" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
