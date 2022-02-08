@@ -6,19 +6,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
 
     private var _favouriteDogBreeds = MutableLiveData<List<BreedDetailModel>>()
     val favouriteDogBreeds = _favouriteDogBreeds
     val favBreedsListAdapter= FavBreedIconListAdapter()
+    val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
     init {
 //       FavBreedsViewModelFactory(favBreedDao)
+//        GlobalScope.launch(Dispatchers.IO) {
+//            favBreedDao.insertAll(
+//                FavBreedEntity(0,"Pitbull",tempUrl),
+//                FavBreedEntity(1,"Rotwiller",tempUrl),
+//                FavBreedEntity(2,"Africa",tempUrl), )
+//        }
+
         getSavedFavouriteBreeds()
     }
 
-    private fun getSavedFavouriteBreeds() {
-        val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
+    private fun getSavedFavouriteBreedsn() {
         _favouriteDogBreeds.value =  mutableListOf(
             BreedDetailModel("Pitbull",tempUrl),
             BreedDetailModel("Rotwiller",tempUrl),
@@ -26,7 +37,11 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
             BreedDetailModel("Chihuahua",tempUrl),
         )
     }
-    private fun getSavedFavouriteBreedso() : List<BreedDetailModel> = favBreedDao.getSavedFavBreeds()
+    private fun getSavedFavouriteBreeds(){
+
+            _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
+
+    }
 
 }
 class DashboardViewModelFactory(

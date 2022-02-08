@@ -15,8 +15,6 @@ Japp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogCeoService.kt,8\8
 Oapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedRandomResponse.kt,c\5\c524b8c682226ba4eddd23584833db574c714f79
 w
 Gapp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogPicture.kt,2\2\2263c4f5ca522ae5adaedb0a8d78eeaf841c7f2b
-r
-Bapp/src/main/java/co/zw/amosesuwali/dogplayground/FirstFragment.kt,c\5\c59ffbddc52cc993d34197d6394dc4ae26e1a390
 Œ
 \app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/GridSpacingItemDecorationHelper.kt,a\3\a3f08fcd0970bbe6aa7419e1bb6ac224f043a932
 ƒ
