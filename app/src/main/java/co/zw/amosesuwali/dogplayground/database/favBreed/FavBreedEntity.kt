@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.database
+package co.zw.amosesuwali.dogplayground.database.favBreed
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

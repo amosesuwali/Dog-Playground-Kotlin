@@ -1,8 +1,6 @@
 
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/BreedListAdapter.kt,7\9\792cf1c43c6f010ecd713ff5ae7d15d30891ab4c
-|
-Lapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedDetailModel.kt,a\6\a62e61a6ec3fedf435bf29be5f535af44c6ff0f3
 y
 Iapp/src/main/java/co/zw/amosesuwali/dogplayground/data/BindingAdapters.kt,8\8\8865f7235b083ef6627620ac6e2787ce8a150171
 n
@@ -21,8 +19,6 @@ z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogCeoService.kt,8\8\8828d02467bbe32a00afa9c6303054c89ca0f689
 s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SelectFavBreed.kt,c\b\cb59703a695e961522a0d12027e5f561a70319aa
-u
-Eapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedType.kt,d\a\da474e3875b5e61a8ca36d8ad7536953563edc46
 Å
 Qapp/src/main/java/co/zw/amosesuwali/dogplayground/data/FavBreedIconListAdapter.kt,3\4\349098b9afc81eca6732093aa94c29c3b9fcc183
 
