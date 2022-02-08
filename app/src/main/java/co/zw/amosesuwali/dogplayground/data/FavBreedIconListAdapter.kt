@@ -1,6 +1,7 @@
 package co.zw.amosesuwali.dogplayground.data
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
@@ -15,10 +16,10 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * data, including computing diffs between lists.
 */
 
-class FavBreedIconListAdapter(): ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(DiffCallback) {
+class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(DiffCallback) {
 
-     var selectedBreeds = MutableLiveData<MutableList<String>> ()
-     var selectedBreedsCount = MutableLiveData<String> ("0")
+     private var selectedBreeds = MutableLiveData<MutableList<String>> ()
+
     class FavBreedIconViewHolder(
     private var binding: BasicBreedIconItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -45,9 +46,18 @@ class FavBreedIconListAdapter(): ListAdapter<BreedDetailModel, FavBreedIconListA
         viewType: Int
     ): FavBreedIconViewHolder {
         selectedBreeds.value= mutableListOf()
-        return FavBreedIconViewHolder(
+        val viewHolder= FavBreedIconViewHolder(
             BasicBreedIconItemBinding.inflate(LayoutInflater.from(parent.context))
         )
+
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            Log.d(" position ",position.toString())
+            Log.d(" position item",getItem(position).toString())
+
+        }
+
+        return viewHolder
     }
 
 
