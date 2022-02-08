@@ -48,20 +48,11 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
         viewType: Int
     ): BreedDetailViewHolder {
         selectedBreeds.value= mutableListOf()
-        return BreedDetailViewHolder(
+        var viewHolder= BreedDetailViewHolder(
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
-    }
-
-
-
-    override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
-        val breedItem = getItem(holder.adapterPosition)
-        Log.d("holder",holder.toString())
-        Log.d("breedItem",breedItem.toString())
-        Log.d("holder.adapterPosition",holder.adapterPosition.toString())
-
-        holder.itemView.setOnClickListener {
+        viewHolder.itemView.setOnClickListener {
+            val breedItem = getItem(viewHolder.adapterPosition)
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
             val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
@@ -78,7 +69,36 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
             selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
             Log.d("selectedBreedSize",selectedBreeds.value?.size.toString())
         }
-        holder.bind(breedItem)
+        return viewHolder
+    }
+
+
+
+    override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
+        val breedItem = getItem(holder.adapterPosition)
+//        Log.d("holder",holder.toString())
+//        Log.d("breedItem",breedItem.toString())
+//        Log.d("holder.adapterPosition",holder.adapterPosition.toString())
+
+//        holder.itemView.setOnClickListener {
+//            val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
+//            val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
+//
+//            if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
+//                selectedBreeds.value?.add(breedItem.breedName)
+//
+//                it.background=selectedBreedDecoration
+//                it.visibility = View.VISIBLE
+//            }else{
+//                selectedBreeds.value?.remove(breedItem.breedName)
+//                it.background=unselectedBreedDecoration
+//            }
+//
+//            selectedBreedsCount.value =  selectedBreeds.value?.size.toString()
+//            Log.d("selectedBreedSize",selectedBreeds.value?.size.toString())
+//        }
+//        holder.bind(breedItem)
+        holder.bind(getItem(position))
 
     }
 
