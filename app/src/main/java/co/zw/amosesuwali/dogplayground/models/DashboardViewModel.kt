@@ -26,7 +26,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
 //                FavBreedEntity(2,"Africa",tempUrl), )
 //        }
 
-        getSavedFavouriteBreeds()
+        _favouriteDogBreeds.value=getSavedFavouriteBreeds()
     }
 
     private fun getSavedFavouriteBreedsn() {
@@ -37,11 +37,12 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
             BreedDetailModel("Chihuahua",tempUrl),
         )
     }
-    private fun getSavedFavouriteBreeds(){
-
-            _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
-
-    }
+//    private fun getSavedFavouriteBreeds(){
+//
+//        _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
+//
+//    }
+     fun getSavedFavouriteBreeds() : List<BreedDetailModel> = favBreedDao.getSavedFavBreeds()
 
 }
 class DashboardViewModelFactory(
