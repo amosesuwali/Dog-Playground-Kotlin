@@ -39,7 +39,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     }
     private fun getSavedFavouriteBreeds(){
 
-            _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
+        _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
 
     }
 
