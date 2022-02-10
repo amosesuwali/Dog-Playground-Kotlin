@@ -21,9 +21,9 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     init {
         GlobalScope.launch(Dispatchers.IO) {
             favBreedDao.insertAll(
-                FavBreedEntity(0,"Pitbull",tempUrl),
-                FavBreedEntity(1,"Rotwiller",tempUrl),
-                FavBreedEntity(2,"Africa",tempUrl), )
+                FavBreedEntity(4,"Pitbull",tempUrl),
+                FavBreedEntity(5,"Rotwiller",tempUrl),
+                FavBreedEntity(6,"Africa",tempUrl), )
         }
 
         getSavedFavouriteBreeds()
