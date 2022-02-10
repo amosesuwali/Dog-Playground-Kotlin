@@ -20,17 +20,17 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
     init {
 //       FavBreedsViewModelFactory(favBreedDao)
-//        GlobalScope.launch(Dispatchers.IO) {
-//            favBreedDao.insertAll(
-//                FavBreedEntity(0,"Pitbull",tempUrl),
-//                FavBreedEntity(1,"Rotwiller",tempUrl),
-//                FavBreedEntity(2,"Africa",tempUrl), )
-//        }
+        GlobalScope.launch(Dispatchers.IO) {
+            favBreedDao.insertAll(
+                FavBreedEntity(0,"Pitbull",tempUrl),
+                FavBreedEntity(1,"Rotwiller",tempUrl),
+                FavBreedEntity(2,"Africa",tempUrl), )
+        }
 
         getSavedFavouriteBreeds()
     }
 
-    private fun getSavedFavouriteBreedsn() {
+    private fun add() {
         _favouriteDogBreeds.value =  mutableListOf(
             BreedDetailModel("Pitbull",tempUrl),
             BreedDetailModel("Rotwiller",tempUrl),
@@ -38,10 +38,11 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
             BreedDetailModel("Chihuahua",tempUrl),
         )
     }
-    private fun getSavedFavouriteBreeds(){
-        viewModelScope.launch {
-            _favouriteDogBreeds.value = favBreedDao.getSavedFavBreeds()
-        }
+     fun getSavedFavouriteBreeds(){
+         GlobalScope.launch(Dispatchers.IO) {
+             _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
+         }
+
     }
 
 }
