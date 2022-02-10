@@ -21,7 +21,6 @@ class Dashboard : Fragment() {
         fun newInstance() = Dashboard()
     }
 
-//    private val dashboardViewModel: DashboardViewModel by viewModels()
 private val dashboardViewModel: DashboardViewModel by activityViewModels {
     DashboardViewModelFactory(
         (activity?.application as DogPlayGroundApplication).database.favBreedDao()
