@@ -9,7 +9,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 interface FavBreedDao {
 
     @Query("SELECT * FROM FavBreedEntity ORDER BY breedName ASC")
-    suspend fun getSavedFavBreeds(): List<BreedDetailModel>
+     fun getSavedFavBreeds(): MutableList<BreedDetailModel>
     @Insert
      fun insertAll(vararg FavBreedEntity: FavBreedEntity)
 
