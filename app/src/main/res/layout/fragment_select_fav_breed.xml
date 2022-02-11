@@ -99,9 +99,11 @@
             android:backgroundTint="@color/black"
             android:layout_margin="@dimen/title_text_1x_margin"
             android:text="@string/next"
+            style="@style/AppMaterialButton"
             android:textColor="@color/white"
             app:cornerRadius="@dimen/next_button_corner_radius"
-            android:enabled="@{viewModel.isSelectedListEmpty()}"
+
+            app:backgroundTint="@color/lightGray"
             app:layout_constraintTop_toBottomOf="@id/search_breed_textview"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="@dimen/title_text_1x_margin"
@@ -114,6 +116,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/button_first"
             app:breedListData="@{viewModel.dogBreeds}"
+
             android:layout_margin="@dimen/title_text_1x_margin"
             app:spanCount="2"
             tools:ignore="SpeakableTextPresentCheck"
