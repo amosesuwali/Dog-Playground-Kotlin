@@ -17,24 +17,23 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     private var _favouriteDogBreeds = MutableLiveData<List<BreedDetailModel>>()
     val favouriteDogBreeds = _favouriteDogBreeds
     val favBreedsListAdapter= FavBreedIconListAdapter()
-    val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
+
     init {
         GlobalScope.launch(Dispatchers.IO) {
-            favBreedDao.insertAll(
-                FavBreedEntity(0,"Pitbull",tempUrl),
-                FavBreedEntity(1,"Rotwiller",tempUrl),
-                FavBreedEntity(2,"Africa",tempUrl), )
+            favBreedDao.deleteAll()
         }
 
         getSavedFavouriteBreeds()
     }
 
      fun getSavedFavouriteBreeds(){
+//         addMore()
          GlobalScope.launch(Dispatchers.IO) {
              _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
          }
-
     }
+
+
 
 }
 class DashboardViewModelFactory(

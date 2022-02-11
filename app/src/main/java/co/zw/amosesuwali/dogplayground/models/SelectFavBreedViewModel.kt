@@ -1,16 +1,17 @@
 package co.zw.amosesuwali.dogplayground.models
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlin.reflect.full.memberProperties
 
-class SelectFavBreedViewModel : ViewModel() {
+class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     enum class DogCeoApiStatus { LOADING, ERROR, DONE }
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<DogCeoApiStatus>()
@@ -19,6 +20,7 @@ class SelectFavBreedViewModel : ViewModel() {
     // The external immutable LiveData for the request status
     val status: LiveData<DogCeoApiStatus> = _status
     val selectedBreedsCount: MutableLiveData<String> = dogListAdapter.selectedBreedsCount
+    val selectedBreedsList: MutableLiveData<MutableList<BreedDetailModel>> = dogListAdapter.selectedBreeds
     val totalBreedsCount=MutableLiveData<String>("0")
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
@@ -35,6 +37,18 @@ class SelectFavBreedViewModel : ViewModel() {
     init {
         getDogBreedsList()
     }
+    class DashboardViewModelFactory(
+        private val favBreedDao: FavBreedDao
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(DashboardViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return DashboardViewModel(favBreedDao) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
+    }
+
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
@@ -71,5 +85,14 @@ class SelectFavBreedViewModel : ViewModel() {
          }else{
              _dogBreeds.value= _dogBreedsLive.value
          }
+    }
+
+    fun addSelectedFavBreeds(){
+        val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
+        GlobalScope.launch(Dispatchers.IO) {
+            selectedBreedsList.value?.forEach {
+                favBreedDao.insertAll(FavBreedEntity(0,it.breedName,it.breedImageURL))
+            }
+        }
     }
 }

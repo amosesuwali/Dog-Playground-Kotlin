@@ -45,6 +45,7 @@ class SelectFavBreed : Fragment() {
         binding.viewModel = viewModel
 
         binding.buttonFirst.setOnClickListener {
+            viewModel.addSelectedFavBreeds()
             findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
         }
         return binding.root

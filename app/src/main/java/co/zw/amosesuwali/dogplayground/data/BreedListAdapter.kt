@@ -20,7 +20,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 
 class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
-     var selectedBreeds = MutableLiveData<MutableList<String>> ()
+     var selectedBreeds = MutableLiveData<MutableList<BreedDetailModel>> ()
      var selectedBreedsCount = MutableLiveData<String> ("0")
     class BreedDetailViewHolder(
     private var binding: BasicBreedDetailItemBinding
@@ -56,13 +56,12 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
             val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
-            if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
-                selectedBreeds.value?.add(breedItem.breedName)
-
+            if (selectedBreeds.value?.contains(breedItem) == false) {
+                selectedBreeds.value?.add(breedItem)
                 it.background=selectedBreedDecoration
                 it.visibility = View.VISIBLE
             }else{
-                selectedBreeds.value?.remove(breedItem.breedName)
+                selectedBreeds.value?.remove(breedItem)
                 it.background=unselectedBreedDecoration
             }
 
