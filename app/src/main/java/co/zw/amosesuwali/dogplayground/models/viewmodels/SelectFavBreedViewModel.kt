@@ -11,6 +11,7 @@ import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlin.reflect.full.memberProperties
 
@@ -57,12 +58,11 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
      * [BreedRandomResponse] [List] [LiveData].
      */
     private fun getDogBreedsList() {
-        Log.d("__________________", "__________________ We fetching breeds doing so,___________")
+
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
                 val serverResponseResponse: ServerResponse = DogCeoApi.retrofitService.getDogBreedList()
-                Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val tempList = mutableListOf<BreedDetailModel>()
                 for (dogBreed in serverResponseResponse.message::class.memberProperties) {
                     tempList.add(BreedDetailModel(dogBreed.name, getBreedImage(dogBreed.name)))
@@ -80,11 +80,14 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     private fun getBreedImage( breedName:String) :String{
-        var breedUrlImage =""
-        viewModelScope.launch {
+        var breedUrlImage ="failed_toget"
+        viewModelScope.async {
             try {
+                Log.d("__________________", "__________________ We fetching breeds doing so,___________")
+                Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val serverResponseResponse: BreedRandomResponse = DogCeoApi.retrofitService.getDogBreedRandomImage(breedName)
                breedUrlImage = serverResponseResponse.message
+                Log.d("________breedUrlImage__", breedUrlImage)
             } catch (e: Exception) {
                 Log.d("__________________",e.message.toString())
             }

@@ -40,21 +40,16 @@ class FirstScreenViewModel : ViewModel() {
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [MarsPhoto] [List] [LiveData].
+     *  [List] [LiveData].
      */
      fun getDogPhotos() {
-        Log.d("__________________", "__________________ We are doing so,___________")
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
                 var pictureResponse: Pictures =DogCeoApi.retrofitService.getPhotos()
                 _photos.value = pictureResponse.imageList
                 _status.value = DogCeoApiStatus.DONE
-                Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
-                Log.d("__________________",_photos.value.toString())
             } catch (e: Exception) {
-                Log.d("__________________","__________________ FAILED RESPONSE___________")
-                Log.d("________________value__",_photos.value.toString())
                 Log.d("__________________",e.message.toString())
                 _status.value = DogCeoApiStatus.ERROR
                 _photos.value = listOf()

@@ -37,7 +37,6 @@ class FirstFragment : Fragment() {
 
         // Sets the adapter of the photosGrid RecyclerView
         binding.photosGrid.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
-        Log.d("__________________Width",Resources.getSystem().displayMetrics.widthPixels.toString())
         binding.photosGrid.layoutParams.width = Resources.getSystem().displayMetrics.widthPixels + (Resources.getSystem().displayMetrics.widthPixels*(0.3)).toInt()
         binding.photosGrid.adapter = PhotoGridAdapter()
         binding.photosGrid.addItemDecoration(

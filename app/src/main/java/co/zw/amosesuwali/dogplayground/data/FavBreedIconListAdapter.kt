@@ -52,8 +52,6 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
 
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition
-            Log.d(" position ",position.toString())
-            Log.d(" position item",getItem(position).toString())
 
         }
 
