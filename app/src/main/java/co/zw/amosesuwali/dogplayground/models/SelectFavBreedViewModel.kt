@@ -20,7 +20,6 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     // The external immutable LiveData for the request status
     val status: LiveData<DogCeoApiStatus> = _status
     val selectedBreedsCount: MutableLiveData<String> = dogListAdapter.selectedBreedsCount
-    val selectedBreedsList: MutableLiveData<MutableList<BreedDetailModel>> = dogListAdapter.selectedBreeds
     val totalBreedsCount=MutableLiveData<String>("0")
 
     // Internally, we use a MutableLiveData, because we will be updating the List of MarsPhoto
@@ -37,13 +36,13 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     init {
         getDogBreedsList()
     }
-    class DashboardViewModelFactory(
+    class SelectFavBreedViewModelFactory(
         private val favBreedDao: FavBreedDao
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(DashboardViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(SelectFavBreedViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return DashboardViewModel(favBreedDao) as T
+                return SelectFavBreedViewModel(favBreedDao) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
@@ -88,9 +87,13 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-        val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
+
+        Log.d("Adding data to DB", "Started")
+        Log.d("Data to be added", dogListAdapter.selectedBreeds.value?.size.toString())
         GlobalScope.launch(Dispatchers.IO) {
-            selectedBreedsList.value?.forEach {
+            Log.d("Adding data to DB", "Now in Coroutine ......")
+            dogListAdapter.selectedBreeds.value?.forEach {
+                Log.d("Now adding data to DB", it.toString())
                 favBreedDao.insertAll(FavBreedEntity(0,it.breedName,it.breedImageURL))
             }
         }

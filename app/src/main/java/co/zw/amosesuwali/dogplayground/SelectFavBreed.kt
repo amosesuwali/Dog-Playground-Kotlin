@@ -5,18 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
+import co.zw.amosesuwali.dogplayground.models.DashboardViewModel
+import co.zw.amosesuwali.dogplayground.models.DashboardViewModelFactory
 import co.zw.amosesuwali.dogplayground.models.SelectFavBreedViewModel
 
 
 class SelectFavBreed : Fragment() {
 
-    private val viewModel: SelectFavBreedViewModel by viewModels()
-
+//    private val viewModel: SelectFavBreedViewModel by viewModels()
+    private val viewModel: SelectFavBreedViewModel by activityViewModels {
+    SelectFavBreedViewModel.SelectFavBreedViewModelFactory(
+        (activity?.application as DogPlayGroundApplication).database.favBreedDao()
+    )
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

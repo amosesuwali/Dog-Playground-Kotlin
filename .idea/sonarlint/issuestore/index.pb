@@ -5,8 +5,6 @@ t
 Dapp/src/main/java/co/zw/amosesuwali/dogplayground/models/Pictures.kt,4\1\418e679abc490112063981a8044c202ec28db9a8
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/PhotoGridAdapter.kt,1\b\1bcc3004b8ba762e8b54973eaad9b976f3e2f2b2
-€
-Papp/src/main/java/co/zw/amosesuwali/dogplayground/models/FirstScreenViewModel.kt,3\a\3a801987117fe4c5500f6028e9f98eb3319ccd09
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogCeoService.kt,8\8\8828d02467bbe32a00afa9c6303054c89ca0f689
 
@@ -19,7 +17,5 @@ Gapp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogPicture.kt,2\2\22
 Sapp/src/androidTest/java/co/zw/amosesuwali/dogplayground/ExampleInstrumentedTest.kt,d\f\df73032d6de72f965f3ac0964b05deddf6befa1e
 t
 Dapp/src/test/java/co/zw/amosesuwali/dogplayground/ExampleUnitTest.kt,4\8\48a641fa2cecf744ea928b777abbcf3c7171c6f4
-s
-Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2\e\2e5f6ee949ac5883023c70bcef3a488b29e8246f
 q
 Aapp/src/main/java/co/zw/amosesuwali/dogplayground/MainActivity.kt,a\f\afa86e59ef699b59b37a74ac790c16ba4b33d0ae
