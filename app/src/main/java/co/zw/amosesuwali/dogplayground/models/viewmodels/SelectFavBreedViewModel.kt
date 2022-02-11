@@ -65,7 +65,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
                 val serverResponseResponse: ServerResponse = DogCeoApi.retrofitService.getDogBreedList()
                 val tempList = mutableListOf<BreedDetailModel>()
                 for (dogBreed in serverResponseResponse.message::class.memberProperties) {
-                    tempList.add(BreedDetailModel(dogBreed.name, getBreedImage(dogBreed.name)))
+                    tempList.add(BreedDetailModel(dogBreed.name,  ""))
                 }
                 selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
@@ -79,19 +79,17 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
         }
     }
 
-    private fun getBreedImage( breedName:String) :String{
-        var breedUrlImage ="failed_toget"
+    private suspend fun getBreedImage(breedName:String) :String{
+        var breedUrlImage =breedName
         viewModelScope.async {
             try {
-                Log.d("__________________", "__________________ We fetching breeds doing so,___________")
-                Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val serverResponseResponse: BreedRandomResponse = DogCeoApi.retrofitService.getDogBreedRandomImage(breedName)
                breedUrlImage = serverResponseResponse.message
-                Log.d("________breedUrlImage__", breedUrlImage)
+                Log.d("__Get__breedUrlImage__", breedUrlImage)
             } catch (e: Exception) {
                 Log.d("__________________",e.message.toString())
             }
-        }
+        }.await()
 
         return breedUrlImage
     }
@@ -105,12 +103,13 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
          }
     }
 
-    fun addSelectedFavBreeds(){
-        viewModelScope.launch(Dispatchers.IO) {
+  suspend fun addSelectedFavBreeds(){
+        viewModelScope.async(Dispatchers.IO) {
             favBreedDao.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
-                favBreedDao.insertAll(FavBreedEntity(0,it.breedName,it.breedImageURL))
+                favBreedDao.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
             }
-        }
+        }.await()
+
     }
 }

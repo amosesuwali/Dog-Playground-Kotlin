@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.SelectFavBreedViewModel
+import kotlinx.coroutines.*
 
 
 class SelectFavBreed : Fragment() {
@@ -50,8 +52,13 @@ class SelectFavBreed : Fragment() {
         binding.viewModel = viewModel
 
         binding.buttonFirst.setOnClickListener {
-            viewModel.addSelectedFavBreeds()
-            findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
+            GlobalScope.async(Dispatchers.IO) {
+                viewModel.addSelectedFavBreeds()
+                withContext (Dispatchers.Main) {
+                    findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
+                }
+            }.onAwait
+
         }
         return binding.root
     }
