@@ -33,7 +33,7 @@ object DogCeoApi {
 
 interface DogCeoApiService {
     /**
-     * Returns a [List] of [MarsPhoto] and this method can be called from a Coroutine.
+     * Returns a [List] of [BreedRandomResponse] and this method can be called from a Coroutine.
      * The @GET annotation indicates that the "photos" endpoint will be requested with the GET
      * HTTP method
      */

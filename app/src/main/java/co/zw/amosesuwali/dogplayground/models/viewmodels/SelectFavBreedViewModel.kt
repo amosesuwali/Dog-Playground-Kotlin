@@ -54,7 +54,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [BreedType] [List] [LiveData].
+     * [BreedRandomResponse] [List] [LiveData].
      */
     private fun getDogBreedsList() {
         Log.d("__________________", "__________________ We fetching breeds doing so,___________")
@@ -103,7 +103,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-        GlobalScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.IO) {
             favBreedDao.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
                 favBreedDao.insertAll(FavBreedEntity(0,it.breedName,it.breedImageURL))
