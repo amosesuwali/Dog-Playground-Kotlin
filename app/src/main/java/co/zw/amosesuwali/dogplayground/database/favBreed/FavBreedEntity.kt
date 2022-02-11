@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class FavBreedEntity(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @NonNull @ColumnInfo(name = "breedName") val breedName: String,
     @NonNull @ColumnInfo(name = "breedImageURL") val breedImageURL: String
 )
