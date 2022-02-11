@@ -5,8 +5,6 @@ t
 Dapp/src/main/java/co/zw/amosesuwali/dogplayground/models/Pictures.kt,4\1\418e679abc490112063981a8044c202ec28db9a8
 z
 Japp/src/main/java/co/zw/amosesuwali/dogplayground/data/PhotoGridAdapter.kt,1\b\1bcc3004b8ba762e8b54973eaad9b976f3e2f2b2
-z
-Japp/src/main/java/co/zw/amosesuwali/dogplayground/network/DogCeoService.kt,8\8\8828d02467bbe32a00afa9c6303054c89ca0f689
 
 Oapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedRandomResponse.kt,c\5\c524b8c682226ba4eddd23584833db574c714f79
 w

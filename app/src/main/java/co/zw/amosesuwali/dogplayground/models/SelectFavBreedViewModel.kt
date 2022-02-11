@@ -62,7 +62,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
                 Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val tempList = mutableListOf<BreedDetailModel>()
                 for (dogBreed in dogBreedsResponse.breedType::class.memberProperties) {
-                    tempList.add(BreedDetailModel(dogBreed.name, "https://images.dog.ceo/breeds/buhund-norwegian/hakon3.jpg"))
+                    tempList.add(BreedDetailModel(dogBreed.name, "https://dog.ceo/api/breed/"+dogBreed.name+"/images/random"))
                 }
                 selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
@@ -87,7 +87,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-
+        favBreedDao.deleteAll()
         Log.d("Adding data to DB", "Started")
         Log.d("Data to be added", dogListAdapter.selectedBreeds.value?.size.toString())
         GlobalScope.launch(Dispatchers.IO) {

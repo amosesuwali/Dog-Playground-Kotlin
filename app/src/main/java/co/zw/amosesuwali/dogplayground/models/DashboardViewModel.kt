@@ -19,15 +19,10 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     val favBreedsListAdapter= FavBreedIconListAdapter()
 
     init {
-        GlobalScope.launch(Dispatchers.IO) {
-//            favBreedDao.deleteAll()
-        }
-
         getSavedFavouriteBreeds()
     }
 
-     fun getSavedFavouriteBreeds(){
-//         addMore()
+     private fun getSavedFavouriteBreeds(){
          GlobalScope.launch(Dispatchers.IO) {
              _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
          }
