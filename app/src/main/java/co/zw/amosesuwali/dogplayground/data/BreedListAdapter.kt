@@ -35,7 +35,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<BreedDetailModel>() {
-        override fun areItemsTheSame(oldItem:BreedDetailModel, newItem: BreedDetailModel): Boolean {
+        override fun areItemsTheSame(oldItem: BreedDetailModel, newItem: BreedDetailModel): Boolean {
             return oldItem.breedName == newItem.breedName
         }
 

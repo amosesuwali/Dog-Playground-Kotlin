@@ -1,13 +1,11 @@
-package co.zw.amosesuwali.dogplayground.models
+package co.zw.amosesuwali.dogplayground.models.viewmodels
 
-import android.database.sqlite.SQLiteDatabase.create
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
-import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
+import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

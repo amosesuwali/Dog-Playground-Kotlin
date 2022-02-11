@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import co.zw.amosesuwali.dogplayground.R
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
-import co.zw.amosesuwali.dogplayground.models.DogCeoApiStatus
+import co.zw.amosesuwali.dogplayground.models.viewmodels.DogCeoApiStatus
 import coil.load
 
 /**

@@ -33,7 +33,7 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<BreedDetailModel>() {
-        override fun areItemsTheSame(oldItem:BreedDetailModel, newItem: BreedDetailModel): Boolean {
+        override fun areItemsTheSame(oldItem: BreedDetailModel, newItem: BreedDetailModel): Boolean {
             return oldItem.breedName == newItem.breedName
         }
 

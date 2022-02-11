@@ -1,12 +1,13 @@
 
 
-package co.zw.amosesuwali.dogplayground.models
+package co.zw.amosesuwali.dogplayground.models.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import co.zw.amosesuwali.dogplayground.models.Pictures
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.launch
 

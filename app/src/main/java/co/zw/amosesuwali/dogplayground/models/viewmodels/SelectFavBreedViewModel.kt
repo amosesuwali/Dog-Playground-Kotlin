@@ -1,10 +1,12 @@
-package co.zw.amosesuwali.dogplayground.models
+package co.zw.amosesuwali.dogplayground.models.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.*
 import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
+import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
+import co.zw.amosesuwali.dogplayground.models.DogBreeds
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -87,7 +89,6 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-
         Log.d("Adding data to DB", "Started")
         Log.d("Data to be added", dogListAdapter.selectedBreeds.value?.size.toString())
         GlobalScope.launch(Dispatchers.IO) {
