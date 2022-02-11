@@ -10,7 +10,6 @@ import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlin.reflect.full.memberProperties
@@ -23,6 +22,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     val dogListAdapter= BreedListAdapter()
     // The external immutable LiveData for the request status
     val status: LiveData<DogCeoApiStatus> = _status
+    val isSelectedListEmpty: MutableLiveData<Boolean> = dogListAdapter.isSelectedListNotEmpty
     val selectedBreedsCount: MutableLiveData<String> = dogListAdapter.selectedBreedsCount
     val totalBreedsCount=MutableLiveData<String>("0")
 

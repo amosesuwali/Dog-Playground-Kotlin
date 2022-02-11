@@ -52,6 +52,7 @@ class SelectFavBreed : Fragment() {
         binding.viewModel = viewModel
 
         binding.buttonFirst.setOnClickListener {
+
             GlobalScope.async(Dispatchers.IO) {
                 viewModel.addSelectedFavBreeds()
                 withContext (Dispatchers.Main) {

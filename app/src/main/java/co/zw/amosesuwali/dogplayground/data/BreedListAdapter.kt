@@ -22,6 +22,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
 
      var selectedBreeds = MutableLiveData<MutableList<BreedDetailModel>> ()
      var selectedBreedsCount = MutableLiveData<String> ("0")
+    val isSelectedListNotEmpty= MutableLiveData(false)
     class BreedDetailViewHolder(
     private var binding: BasicBreedDetailItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -55,6 +56,8 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
             val breedItem = getItem(viewHolder.adapterPosition)
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
             val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
+
+            isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
 
             if (selectedBreeds.value?.contains(breedItem) == false) {
                 selectedBreeds.value?.add(breedItem)
@@ -98,6 +101,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
 //        }
 //        holder.bind(breedItem)
         holder.bind(getItem(position))
+        isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
 
     }
 
