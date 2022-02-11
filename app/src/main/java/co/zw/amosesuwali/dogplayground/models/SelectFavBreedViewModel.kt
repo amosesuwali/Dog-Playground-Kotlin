@@ -87,10 +87,11 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-        favBreedDao.deleteAll()
+
         Log.d("Adding data to DB", "Started")
         Log.d("Data to be added", dogListAdapter.selectedBreeds.value?.size.toString())
         GlobalScope.launch(Dispatchers.IO) {
+            favBreedDao.deleteAll()
             Log.d("Adding data to DB", "Now in Coroutine ......")
             dogListAdapter.selectedBreeds.value?.forEach {
                 Log.d("Now adding data to DB", it.toString())
