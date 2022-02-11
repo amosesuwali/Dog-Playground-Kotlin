@@ -1,7 +1,7 @@
 package co.zw.amosesuwali.dogplayground.network
 
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
-import co.zw.amosesuwali.dogplayground.models.DogBreeds
+import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.models.Pictures
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -41,7 +41,7 @@ interface DogCeoApiService {
     suspend fun getPhotos(): Pictures
 
     @GET("breeds/list/all")
-    suspend fun getDogBreedList(): DogBreeds
+    suspend fun getDogBreedList(): ServerResponse
 
     @GET("breed/{breedName}/images/random")
     suspend fun getDogBreedRandomImage( @Path("breedName")breedName:String): BreedRandomResponse

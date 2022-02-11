@@ -6,7 +6,8 @@ import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
-import co.zw.amosesuwali.dogplayground.models.DogBreeds
+import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
+import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.network.DogCeoApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -60,11 +61,11 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
-                val dogBreedsResponse: DogBreeds = DogCeoApi.retrofitService.getDogBreedList()
+                val serverResponseResponse: ServerResponse = DogCeoApi.retrofitService.getDogBreedList()
                 Log.d("__________________", "__________________ SERVER RESPONSE SUCCESS___________")
                 val tempList = mutableListOf<BreedDetailModel>()
-                for (dogBreed in dogBreedsResponse.breedType::class.memberProperties) {
-                    tempList.add(BreedDetailModel(dogBreed.name, "https://dog.ceo/api/breed/"+dogBreed.name+"/images/random"))
+                for (dogBreed in serverResponseResponse.message::class.memberProperties) {
+                    tempList.add(BreedDetailModel(dogBreed.name, getBreedImage(dogBreed.name)))
                 }
                 selectedBreeds.value=tempList.size.toString()
                 _dogBreeds.value =  tempList
@@ -78,8 +79,21 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
         }
     }
 
+    private fun getBreedImage( breedName:String) :String{
+        var breedUrlImage =""
+        viewModelScope.launch {
+            try {
+                val serverResponseResponse: BreedRandomResponse = DogCeoApi.retrofitService.getDogBreedRandomImage(breedName)
+               breedUrlImage = serverResponseResponse.message
+            } catch (e: Exception) {
+                Log.d("__________________",e.message.toString())
+            }
+        }
 
-     fun searchBreedFromFavList(breed:CharSequence){
+        return breedUrlImage
+    }
+
+    fun searchBreedFromFavList(breed:CharSequence){
          _dogBreeds.value= _dogBreedsLive.value
          if(breed.isNotEmpty()){
              _dogBreeds.value=_dogBreeds.value?.filter { it.breedName.contains(breed,true) }
@@ -89,13 +103,9 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     }
 
     fun addSelectedFavBreeds(){
-        Log.d("Adding data to DB", "Started")
-        Log.d("Data to be added", dogListAdapter.selectedBreeds.value?.size.toString())
         GlobalScope.launch(Dispatchers.IO) {
             favBreedDao.deleteAll()
-            Log.d("Adding data to DB", "Now in Coroutine ......")
             dogListAdapter.selectedBreeds.value?.forEach {
-                Log.d("Now adding data to DB", it.toString())
                 favBreedDao.insertAll(FavBreedEntity(0,it.breedName,it.breedImageURL))
             }
         }
