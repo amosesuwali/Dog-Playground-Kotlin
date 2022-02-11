@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="co.zw.amosesuwali.dogplayground.models.DashboardViewModel" />
+            type="co.zw.amosesuwali.dogplayground.models.viewmodels.DashboardViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

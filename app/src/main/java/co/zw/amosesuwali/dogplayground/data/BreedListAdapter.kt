@@ -20,8 +20,9 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 
 class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDetailViewHolder>(DiffCallback) {
 
-     var selectedBreeds = MutableLiveData<MutableList<String>> ()
+     var selectedBreeds = MutableLiveData<MutableList<BreedDetailModel>> ()
      var selectedBreedsCount = MutableLiveData<String> ("0")
+    val isSelectedListNotEmpty= MutableLiveData(false)
     class BreedDetailViewHolder(
     private var binding: BasicBreedDetailItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -35,7 +36,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<BreedDetailModel>() {
-        override fun areItemsTheSame(oldItem:BreedDetailModel, newItem: BreedDetailModel): Boolean {
+        override fun areItemsTheSame(oldItem: BreedDetailModel, newItem: BreedDetailModel): Boolean {
             return oldItem.breedName == newItem.breedName
         }
 
@@ -56,13 +57,14 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
             val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
-            if (selectedBreeds.value?.contains(breedItem.breedName) == false) {
-                selectedBreeds.value?.add(breedItem.breedName)
+            isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
 
+            if (selectedBreeds.value?.contains(breedItem) == false) {
+                selectedBreeds.value?.add(breedItem)
                 it.background=selectedBreedDecoration
                 it.visibility = View.VISIBLE
             }else{
-                selectedBreeds.value?.remove(breedItem.breedName)
+                selectedBreeds.value?.remove(breedItem)
                 it.background=unselectedBreedDecoration
             }
 
@@ -99,6 +101,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
 //        }
 //        holder.bind(breedItem)
         holder.bind(getItem(position))
+        isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
 
     }
 

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.data.PhotoGridAdapter
 import co.zw.amosesuwali.dogplayground.databinding.FragmentFirstBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
-import co.zw.amosesuwali.dogplayground.models.FirstScreenViewModel
+import co.zw.amosesuwali.dogplayground.models.viewmodels.FirstScreenViewModel
 
 
 /**
@@ -37,7 +37,6 @@ class FirstFragment : Fragment() {
 
         // Sets the adapter of the photosGrid RecyclerView
         binding.photosGrid.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
-        Log.d("__________________Width",Resources.getSystem().displayMetrics.widthPixels.toString())
         binding.photosGrid.layoutParams.width = Resources.getSystem().displayMetrics.widthPixels + (Resources.getSystem().displayMetrics.widthPixels*(0.3)).toInt()
         binding.photosGrid.adapter = PhotoGridAdapter()
         binding.photosGrid.addItemDecoration(
