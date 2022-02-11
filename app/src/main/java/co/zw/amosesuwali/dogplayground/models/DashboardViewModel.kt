@@ -20,7 +20,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
 
     init {
         GlobalScope.launch(Dispatchers.IO) {
-            favBreedDao.deleteAll()
+//            favBreedDao.deleteAll()
         }
 
         getSavedFavouriteBreeds()
