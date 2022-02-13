@@ -1,11 +1,9 @@
 package co.zw.amosesuwali.dogplayground.database.app
 
 import android.content.Context
-import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.migration.Migration
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
 
