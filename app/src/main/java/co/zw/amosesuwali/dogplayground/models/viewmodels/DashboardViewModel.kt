@@ -3,6 +3,7 @@ package co.zw.amosesuwali.dogplayground.models.viewmodels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
@@ -21,7 +22,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     }
 
      private fun getSavedFavouriteBreeds(){
-         GlobalScope.launch(Dispatchers.IO) {
+         viewModelScope.launch{
              _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
          }
     }
