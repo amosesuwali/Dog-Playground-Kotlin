@@ -50,7 +50,7 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
         )
 
         viewHolder.itemView.setOnClickListener {
-            val position = viewHolder.adapterPosition
+            viewHolder.adapterPosition
 
         }
 

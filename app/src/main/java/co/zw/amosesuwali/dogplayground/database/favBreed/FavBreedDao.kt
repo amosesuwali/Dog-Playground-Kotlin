@@ -11,7 +11,7 @@ interface FavBreedDao {
     @Query("SELECT * FROM FavBreedEntity ORDER BY breedName ASC")
      fun getSavedFavBreeds(): MutableList<BreedDetailModel>
     @Insert
-     fun insertAll(vararg FavBreedEntity: FavBreedEntity)
+     fun insertAll(vararg favEntity: FavBreedEntity)
 
     @Query("DELETE FROM FavBreedEntity")
      fun deleteAll()
