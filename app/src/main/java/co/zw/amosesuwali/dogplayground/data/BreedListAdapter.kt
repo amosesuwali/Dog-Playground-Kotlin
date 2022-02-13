@@ -76,7 +76,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
 
 
 
-    override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) { 
+    override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
         holder.bind(getItem(position))
         isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
 
