@@ -55,7 +55,7 @@ class SelectFavBreed : Fragment() {
 
         binding.buttonFirst.setOnClickListener {
 
-            GlobalScope.async(Dispatchers.IO) {
+            GlobalScope.async {
                 viewModel.addSelectedFavBreeds()
                 withContext (Dispatchers.Main) {
                     findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
