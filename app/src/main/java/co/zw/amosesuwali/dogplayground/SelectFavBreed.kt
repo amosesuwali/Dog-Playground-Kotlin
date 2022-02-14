@@ -1,7 +1,5 @@
 package co.zw.amosesuwali.dogplayground
 
-import android.app.ProgressDialog
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,16 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.SelectFavBreedViewModel
-import kotlinx.coroutines.*
-import android.widget.ProgressBar
-import android.R
-import androidx.appcompat.app.AlertDialog
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.withContext
 
 
 class SelectFavBreed : Fragment() {
@@ -61,7 +57,7 @@ class SelectFavBreed : Fragment() {
             viewModel.viewModelScope.async {
                 viewModel.addSelectedFavBreeds()
                 withContext (Dispatchers.Main) {
-                    findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
+//                    findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
                 }
             }.onAwait
 
@@ -70,11 +66,11 @@ class SelectFavBreed : Fragment() {
     }
 
     fun basicAlert(){
-        var title = "KotlinApp"
-        val progressDialog = ProgressDialog(this@MainActivity)
-        progressDialog.setTitle("Kotlin Progress Bar")
-        progressDialog.setMessage("Application is loading, please wait")
-        progressDialog.show()
+//        var title = "KotlinApp"
+//        val progressDialog = ProgressDialog(this@MainActivity)
+//        progressDialog.setTitle("Kotlin Progress Bar")
+//        progressDialog.setMessage("Application is loading, please wait")
+//        progressDialog.show()
     }
 }
 
