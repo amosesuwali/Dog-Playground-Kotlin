@@ -1,13 +1,12 @@
-package co.zw.amosesuwali.dogplayground.models
+package co.zw.amosesuwali.dogplayground.models.viewmodels
 
-import android.database.sqlite.SQLiteDatabase.create
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
-import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
+import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,24 +16,18 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     private var _favouriteDogBreeds = MutableLiveData<List<BreedDetailModel>>()
     val favouriteDogBreeds = _favouriteDogBreeds
     val favBreedsListAdapter= FavBreedIconListAdapter()
-    val tempUrl="https://images.dog.ceo/breeds/terrier-irish/n02093991_403.jpg"
-    init {
-        GlobalScope.launch(Dispatchers.IO) {
-            favBreedDao.insertAll(
-                FavBreedEntity(4,"Pitbull",tempUrl),
-                FavBreedEntity(5,"Rotwiller",tempUrl),
-                FavBreedEntity(6,"Africa",tempUrl), )
-        }
 
+    init {
         getSavedFavouriteBreeds()
     }
 
-     fun getSavedFavouriteBreeds(){
-         GlobalScope.launch(Dispatchers.IO) {
+     private fun getSavedFavouriteBreeds(){
+         viewModelScope.launch{
              _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
          }
-
     }
+
+
 
 }
 class DashboardViewModelFactory(

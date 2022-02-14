@@ -1,7 +1,6 @@
 package co.zw.amosesuwali.dogplayground.data
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
@@ -33,7 +32,7 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<BreedDetailModel>() {
-        override fun areItemsTheSame(oldItem:BreedDetailModel, newItem: BreedDetailModel): Boolean {
+        override fun areItemsTheSame(oldItem: BreedDetailModel, newItem: BreedDetailModel): Boolean {
             return oldItem.breedName == newItem.breedName
         }
 
@@ -51,9 +50,7 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
         )
 
         viewHolder.itemView.setOnClickListener {
-            val position = viewHolder.adapterPosition
-            Log.d(" position ",position.toString())
-            Log.d(" position item",getItem(position).toString())
+            viewHolder.adapterPosition
 
         }
 
