@@ -1,7 +1,6 @@
 package co.zw.amosesuwali.dogplayground.data
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
@@ -51,7 +50,7 @@ class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAda
         )
 
         viewHolder.itemView.setOnClickListener {
-            val position = viewHolder.adapterPosition
+            viewHolder.adapterPosition
 
         }
 
