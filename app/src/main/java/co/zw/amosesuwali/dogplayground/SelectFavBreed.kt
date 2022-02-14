@@ -1,5 +1,7 @@
 package co.zw.amosesuwali.dogplayground
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,9 @@ import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.SelectFavBreedViewModel
 import kotlinx.coroutines.*
+import android.widget.ProgressBar
+import android.R
+import androidx.appcompat.app.AlertDialog
 
 
 class SelectFavBreed : Fragment() {
@@ -62,6 +67,15 @@ class SelectFavBreed : Fragment() {
 
         }
         return binding.root
+    }
+
+    fun basicAlert(){
+
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder.setCancelable(false) // if you want user to wait for some process to finish,
+
+        builder.setView(R.layout.layout_loading_dialog)
+        val dialog: AlertDialog = builder.create()
     }
 }
 
