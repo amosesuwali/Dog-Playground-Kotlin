@@ -18,7 +18,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     val favBreedsListAdapter= FavBreedIconListAdapter()
 
     init {
-        getSavedFavouriteBreeds()
+//        getSavedFavouriteBreeds()
     }
 
      private fun getSavedFavouriteBreeds(){
