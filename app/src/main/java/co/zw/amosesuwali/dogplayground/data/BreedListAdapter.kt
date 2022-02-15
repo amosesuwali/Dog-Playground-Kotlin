@@ -57,7 +57,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)
             val unselectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_item_border,context!!.theme)
 
-            isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
+            isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (false)
 
             if (selectedBreeds.value?.contains(breedItem) == false) {
                 selectedBreeds.value?.add(breedItem)
@@ -78,7 +78,7 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
 
     override fun onBindViewHolder(holder: BreedDetailViewHolder, position: Int) {
         holder.bind(getItem(position))
-        isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (0 == null)
+        isSelectedListNotEmpty.value = selectedBreedsCount.value?.equals(0) ?: (false)
 
     }
 
