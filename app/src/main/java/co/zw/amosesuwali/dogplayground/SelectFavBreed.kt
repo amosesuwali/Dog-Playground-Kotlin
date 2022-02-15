@@ -1,14 +1,13 @@
 package co.zw.amosesuwali.dogplayground
 
-import android.app.ProgressDialog
+import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
+import android.view.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
@@ -53,12 +52,21 @@ class SelectFavBreed : Fragment() {
         )
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
-
+        val dialogBuilder: AlertDialog.Builder? = activity?.let {
+            AlertDialog.Builder(it)
+        }
+        dialogBuilder?.setView(R.layout.progress_dialog);
         binding.buttonFirst.setOnClickListener {
+            // This should be called once in your Fragment's onViewCreated() or in Activity onCreate() method to avoid dialog duplicates.
+            dialog = dialogBuilder?.create();
+            dialog?.show()
 
-            viewModel.viewModelScope.async {
+            viewModel.viewModelScope.async(Dispatchers.Main) {
                 viewModel.addSelectedFavBreeds()
+                Log.d("Adding Fav to DB","We have finished thank you")
                 withContext (Dispatchers.Main) {
+
+                    dialog?.dismiss()
                     findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
                 }
             }.onAwait
@@ -66,14 +74,10 @@ class SelectFavBreed : Fragment() {
         }
         return binding.root
     }
+//
 
-    fun basicAlert(){
-        var title = "KotlinApp"
-        val progressDialog = ProgressDialog(this@MainActivity)
-        progressDialog.setTitle("Kotlin Progress Bar")
-        progressDialog.setMessage("Application is loading, please wait")
-        progressDialog.show()
-    }
+    var dialog : Dialog? = context?.let { Dialog(it) }
+
 }
 
 
