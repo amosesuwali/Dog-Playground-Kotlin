@@ -14,9 +14,7 @@ import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.FragmentSelectFavBreedBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.SelectFavBreedViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 
 class SelectFavBreed : Fragment() {
@@ -61,15 +59,14 @@ class SelectFavBreed : Fragment() {
             dialog = dialogBuilder?.create();
             dialog?.show()
 
-            viewModel.viewModelScope.async(Dispatchers.Main) {
+           GlobalScope.launch() {
                 viewModel.addSelectedFavBreeds()
                 Log.d("Adding Fav to DB","We have finished thank you")
                 withContext (Dispatchers.Main) {
-
                     dialog?.dismiss()
                     findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
                 }
-            }.onAwait
+            }
 
         }
         return binding.root
