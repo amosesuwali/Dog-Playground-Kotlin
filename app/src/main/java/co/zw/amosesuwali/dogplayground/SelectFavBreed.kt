@@ -59,7 +59,7 @@ class SelectFavBreed : Fragment() {
             dialog = dialogBuilder?.create();
             dialog?.show()
 
-           GlobalScope.launch() {
+            GlobalScope.launch(Dispatchers.IO) {
                 viewModel.addSelectedFavBreeds()
                 Log.d("Adding Fav to DB","We have finished thank you")
                 withContext (Dispatchers.Main) {

@@ -11,11 +11,3 @@ s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2/e/2e5f6ee949ac5883023c70bcef3a488b29e8246f
 ‹
 [app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/FirstScreenViewModel.kt,5/a/5a2d94d80dc100a30da3945318c0101fdf631ef4
-‚
-Rapp/src/main/java/co/zw/amosesuwali/dogplayground/database/favBreed/FavBreedDao.kt,f/5/f58017ecf8a9a2ffa20b3f19814b4342cdb8c013
-‰
-Yapp/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/DashboardViewModel.kt,6/4/648784a24239bd20d19462992c2d6b0b8e526610
-Ž
-^app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/SelectFavBreedViewModel.kt,5/6/56c5484b1d5eafe3431d358755185e0d017912fc
-s
-Capp/src/main/java/co/zw/amosesuwali/dogplayground/SelectFavBreed.kt,c/b/cb59703a695e961522a0d12027e5f561a70319aa
