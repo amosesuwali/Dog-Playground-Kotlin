@@ -19,7 +19,6 @@ import kotlinx.coroutines.withContext
 
 class SelectFavBreed : Fragment() {
 
-//    private val viewModel: SelectFavBreedViewModel by viewModels()
     private val viewModel: SelectFavBreedViewModel by activityViewModels {
     SelectFavBreedViewModel.SelectFavBreedViewModelFactory(
         (activity?.application as DogPlayGroundApplication).database.favBreedDao()
