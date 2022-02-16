@@ -2,14 +2,13 @@ package co.zw.amosesuwali.dogplayground.models.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.*
-import co.zw.amosesuwali.dogplayground.data.BreedListAdapter
+import co.zw.amosesuwali.dogplayground.helpers.uibinders.BreedListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedEntity
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.ServerResponse
-import co.zw.amosesuwali.dogplayground.network.DogCeoApi
-import kotlinx.coroutines.Dispatchers
+import co.zw.amosesuwali.dogplayground.api.DogCeoApi
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlin.reflect.full.memberProperties
