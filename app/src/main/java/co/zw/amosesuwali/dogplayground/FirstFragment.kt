@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import co.zw.amosesuwali.dogplayground.data.PhotoGridAdapter
+import co.zw.amosesuwali.dogplayground.helpers.uibinders.PhotoGridAdapter
 import co.zw.amosesuwali.dogplayground.databinding.FragmentFirstBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.FirstScreenViewModel
