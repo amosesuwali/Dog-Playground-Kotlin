@@ -8,7 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.models.Pictures
-import co.zw.amosesuwali.dogplayground.network.DogCeoApi
+import co.zw.amosesuwali.dogplayground.api.DogCeoApi
 import kotlinx.coroutines.launch
 
 enum class DogCeoApiStatus { LOADING, ERROR, DONE }
