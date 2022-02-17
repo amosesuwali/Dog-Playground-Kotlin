@@ -44,5 +44,18 @@
         android:id="@+id/dashboard"
         android:name="co.zw.amosesuwali.dogplayground.Dashboard"
         android:label="dashboard_fragment"
-        tools:layout="@layout/dashboard_fragment" />
+        tools:layout="@layout/dashboard_fragment" >
+        <action
+            android:id="@+id/action_dashboard_to_breedDetail"
+            app:destination="@id/breedDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/breedDetail"
+        android:name="co.zw.amosesuwali.dogplayground.BreedDetail"
+        android:label="fragment_breed_detail"
+        tools:layout="@layout/fragment_breed_detail" >
+        <action
+            android:id="@+id/action_breedDetail_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
 </navigation>
