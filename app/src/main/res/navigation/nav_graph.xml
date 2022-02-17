@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_dashboard_to_breedDetail"
             app:destination="@id/breedDetail" />
+        <action
+            android:id="@+id/action_dashboard_to_gameHome"
+            app:destination="@id/gameHome" />
     </fragment>
     <fragment
         android:id="@+id/breedDetail"
@@ -56,6 +59,15 @@
         tools:layout="@layout/fragment_breed_detail" >
         <action
             android:id="@+id/action_breedDetail_to_dashboard"
+            app:destination="@id/dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameHome"
+        android:name="co.zw.amosesuwali.dogplayground.GameHome"
+        android:label="fragment_game_home"
+        tools:layout="@layout/fragment_game_home" >
+        <action
+            android:id="@+id/action_gameHome_to_dashboard"
             app:destination="@id/dashboard" />
     </fragment>
 </navigation>
