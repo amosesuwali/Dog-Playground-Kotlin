@@ -4,11 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import co.zw.amosesuwali.dogplayground.data.FavBreedIconListAdapter
+import co.zw.amosesuwali.dogplayground.helpers.uibinders.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
@@ -18,7 +16,7 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     val favBreedsListAdapter= FavBreedIconListAdapter()
 
     init {
-        getSavedFavouriteBreeds()
+//        getSavedFavouriteBreeds()
     }
 
      private fun getSavedFavouriteBreeds(){

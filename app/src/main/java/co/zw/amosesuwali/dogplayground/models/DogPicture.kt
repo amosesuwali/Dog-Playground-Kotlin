@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.network
+package co.zw.amosesuwali.dogplayground.models
 
 import com.squareup.moshi.Json
 

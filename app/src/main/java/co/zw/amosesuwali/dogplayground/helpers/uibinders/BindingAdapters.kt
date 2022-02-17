@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.data
+package co.zw.amosesuwali.dogplayground.helpers.uibinders
 
 import android.view.View
 import android.widget.ImageView

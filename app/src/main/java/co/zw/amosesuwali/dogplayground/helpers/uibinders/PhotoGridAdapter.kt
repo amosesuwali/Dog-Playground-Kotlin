@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.data
+package co.zw.amosesuwali.dogplayground.helpers.uibinders
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

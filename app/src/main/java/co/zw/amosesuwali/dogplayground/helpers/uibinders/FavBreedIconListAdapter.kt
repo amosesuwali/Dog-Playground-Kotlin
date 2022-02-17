@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.data
+package co.zw.amosesuwali.dogplayground.helpers.uibinders
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -15,7 +15,9 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * data, including computing diffs between lists.
 */
 
-class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(DiffCallback) {
+class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(
+    DiffCallback
+) {
 
      private var selectedBreeds = MutableLiveData<MutableList<String>> ()
 

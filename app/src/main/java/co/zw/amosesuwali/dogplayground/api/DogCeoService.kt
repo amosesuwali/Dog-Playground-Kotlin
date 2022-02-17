@@ -1,4 +1,4 @@
-package co.zw.amosesuwali.dogplayground.network
+package co.zw.amosesuwali.dogplayground.api
 
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.ServerResponse
