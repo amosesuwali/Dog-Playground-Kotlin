@@ -7,6 +7,7 @@ import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -59,10 +60,10 @@ class SelectFavBreed : Fragment() {
             dialog = dialogBuilder?.create();
             dialog?.show()
 
-            GlobalScope.launch(Dispatchers.IO) {
+            lifecycleScope.launch {
                 viewModel.addSelectedFavBreeds()
-                Log.d("Adding Fav to DB","We have finished thank you")
-                withContext (Dispatchers.Main) {
+                withContext (Dispatchers.Default) {
+                    Log.d("Adding Fav to DB","We have finished thank you")
                     dialog?.dismiss()
                     findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)
                 }
