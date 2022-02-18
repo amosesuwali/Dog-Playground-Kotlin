@@ -27,13 +27,3 @@ v
 Fapp/src/main/java/co/zw/amosesuwali/dogplayground/models/DogPicture.kt,c/2/c23e77aba143b60ecdfd965b0bb1a255032c351e
 |
 Lapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedDetailModel.kt,a/6/a62e61a6ec3fedf435bf29be5f535af44c6ff0f3
-s
-Capp/src/main/java/co/zw/amosesuwali/dogplayground/SelectFavBreed.kt,c/b/cb59703a695e961522a0d12027e5f561a70319aa
-Ž
-^app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/SelectFavBreedViewModel.kt,5/6/56c5484b1d5eafe3431d358755185e0d017912fc
-p
-@app/src/main/java/co/zw/amosesuwali/dogplayground/BreedDetail.kt,f/2/f22c27cd6fa16c247f707673feb0e20a1e837644
-m
-=app/src/main/java/co/zw/amosesuwali/dogplayground/GameHome.kt,0/2/02cc01d6d53f8daf47c436dea9ab668288c970b8
-‡
-Wapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/PhotoGridAdapter.kt,6/3/6391ab1b71c914d1c15336d847cc2476a908587b
