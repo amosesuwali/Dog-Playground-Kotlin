@@ -33,3 +33,5 @@ s
 Capp/src/main/java/co/zw/amosesuwali/dogplayground/SecondFragment.kt,2\e\2e5f6ee949ac5883023c70bcef3a488b29e8246f
 …
 Uapp/src/main/java/co/zw/amosesuwali/dogplayground/database/favBreed/FavBreedEntity.kt,3\f\3f99a21cb7e63fdea8512fa600c3815d971871b9
+p
+@app/src/main/java/co/zw/amosesuwali/dogplayground/BreedDetail.kt,f/2/f22c27cd6fa16c247f707673feb0e20a1e837644
