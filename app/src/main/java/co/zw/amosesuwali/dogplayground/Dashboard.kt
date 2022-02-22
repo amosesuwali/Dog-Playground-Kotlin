@@ -1,16 +1,20 @@
 package co.zw.amosesuwali.dogplayground
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.coroutineScope
 import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.DashboardFragmentBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.DashboardViewModel
 import co.zw.amosesuwali.dogplayground.models.viewmodels.DashboardViewModelFactory
+import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.launch
 
 class Dashboard : Fragment() {
 
@@ -45,10 +49,13 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
         return binding.root
     }
 
+    @InternalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        lifecycle.coroutineScope.launch {
-//           dashboardViewModel.getSavedFavouriteBreeds()
-//        }
+        lifecycle.coroutineScope.launch {
+           dashboardViewModel.getSavedFavouriteBreeds()
+        }
     }
+
+
 }

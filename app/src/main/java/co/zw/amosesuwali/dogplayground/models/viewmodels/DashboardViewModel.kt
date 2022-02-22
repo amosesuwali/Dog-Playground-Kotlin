@@ -6,24 +6,31 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import co.zw.amosesuwali.dogplayground.helpers.uibinders.FavBreedIconListAdapter
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedRepository
 import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
 
     private var _favouriteDogBreeds = MutableLiveData<List<BreedDetailModel>>()
     val favouriteDogBreeds = _favouriteDogBreeds
     val favBreedsListAdapter= FavBreedIconListAdapter()
+    private val backgroundScope: CoroutineContext = viewModelScope.coroutineContext
+    val favBreedsRepository= FavBreedRepository(favBreedDao)
 
     init {
-      getSavedFavouriteBreeds()
+//        getSavedFavouriteBreeds()
     }
 
-     private fun getSavedFavouriteBreeds(){
-         viewModelScope.launch{
-             _favouriteDogBreeds.postValue(favBreedDao.getSavedFavBreeds())
-         }
-    }
+//     private fun getSavedFavouriteBreeds(){
+//         viewModelScope.launch{
+//             _favouriteDogBreeds.postValue(favBreedsRepository.getSavedFavBreeds())
+//         }
+//    }
+
+    fun getSavedFavouriteBreeds(): Flow<List<BreedDetailModel>> = favBreedDao.getSavedFavBreeds()
 
 
 

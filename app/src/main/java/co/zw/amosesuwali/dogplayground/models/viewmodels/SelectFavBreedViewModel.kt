@@ -9,8 +9,10 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.api.DogCeoApi
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedRepository
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import java.util.concurrent.Flow
 import kotlin.reflect.full.memberProperties
 
 class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
@@ -78,6 +80,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
         }
     }
 
+
     private suspend fun getBreedImage(breedName:String) :String{
         var breedUrlImage =breedName
         viewModelScope.async {
@@ -102,11 +105,12 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
          }
     }
 
+    private val favBreedsRepository= FavBreedRepository(favBreedDao)
     fun addSelectedFavBreeds(){
         viewModelScope.launch{
-//            favBreedDao.deleteAll()
+            favBreedsRepository.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
-                favBreedDao.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
+                favBreedsRepository.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
             }
         }
 
