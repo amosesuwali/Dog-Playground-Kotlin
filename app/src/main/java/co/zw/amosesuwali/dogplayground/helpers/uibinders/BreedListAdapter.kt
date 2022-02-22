@@ -54,6 +54,8 @@ class BreedListAdapter(): ListAdapter<BreedDetailModel, BreedListAdapter.BreedDe
         var viewHolder= BreedDetailViewHolder(
             BasicBreedDetailItemBinding.inflate(LayoutInflater.from(parent.context))
         )
+
+        
         viewHolder.itemView.setOnClickListener {
             val breedItem = getItem(viewHolder.adapterPosition)
             val selectedBreedDecoration = context!!.resources.getDrawable(R.drawable.breed_selected_item_border,context!!.theme)

@@ -108,9 +108,9 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
     private val favBreedsRepository= FavBreedRepository(favBreedDao)
     fun addSelectedFavBreeds(){
         viewModelScope.launch{
-            favBreedsRepository.deleteAll()
+//            favBreedDao.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
-                favBreedsRepository.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
+                favBreedDao.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
             }
         }
 

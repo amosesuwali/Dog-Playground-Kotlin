@@ -49,7 +49,6 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
         return binding.root
     }
 
-    @InternalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         lifecycle.coroutineScope.launch {
