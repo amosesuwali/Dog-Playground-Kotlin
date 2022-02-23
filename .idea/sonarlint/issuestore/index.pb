@@ -13,10 +13,6 @@ u
 Eapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedType.kt,d\a\da474e3875b5e61a8ca36d8ad7536953563edc46
 Ž
 ^app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/FavBreedIconListAdapter.kt,f\a\fad6b0c30d97876a24fbe6e160d2ede61c480838
-‡
-Wapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BreedListAdapter.kt,f\c\fc4efe82c5e1b4dd03954c2f73d6256bc512c3ce
-‹
-[app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/FirstScreenViewModel.kt,5\a\5a2d94d80dc100a30da3945318c0101fdf631ef4
 
 Oapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedRandomResponse.kt,c\5\c524b8c682226ba4eddd23584833db574c714f79
 Œ
