@@ -9,8 +9,6 @@ v
 Fapp/src/main/java/co/zw/amosesuwali/dogplayground/api/DogCeoService.kt,5\d\5d96d1419067341f0f4847978b9110a122236d0f
 u
 Eapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedType.kt,d\a\da474e3875b5e61a8ca36d8ad7536953563edc46
-Ž
-^app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/FavBreedIconListAdapter.kt,f\a\fad6b0c30d97876a24fbe6e160d2ede61c480838
 
 Oapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedRandomResponse.kt,c\5\c524b8c682226ba4eddd23584833db574c714f79
 Œ
