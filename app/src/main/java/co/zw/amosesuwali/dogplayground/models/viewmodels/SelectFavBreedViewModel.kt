@@ -10,6 +10,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedRandomResponse
 import co.zw.amosesuwali.dogplayground.models.ServerResponse
 import co.zw.amosesuwali.dogplayground.api.DogCeoApi
 import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedRepository
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.util.concurrent.Flow
@@ -107,7 +108,7 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
 
     private val favBreedsRepository= FavBreedRepository(favBreedDao)
     fun addSelectedFavBreeds(){
-        viewModelScope.launch{
+        GlobalScope.launch{
 //            favBreedDao.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
                 favBreedDao.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
