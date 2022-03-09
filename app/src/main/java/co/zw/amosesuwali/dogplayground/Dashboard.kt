@@ -39,9 +39,9 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
 //        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.favouriteBreedList.addItemDecoration(
             GridSpacingItemDecorationHelper(
-                2,
-                20,
-                false
+                1,
+                25,
+                true
             )
         )
         // Giving the binding access to the OverviewViewModel
