@@ -19,10 +19,10 @@ class DashboardViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
     val favouriteDogBreeds = _favouriteDogBreeds
     val favBreedsListAdapter= FavBreedIconListAdapter({})
     init {
-//        getSavedFavouriteBreeds()
+       viewModelScope.launch {
+            getSavedFavouriteBreeds()
+        }
     }
-
-//     fun getSavedFavouriteBreeds(): MutableLiveData<List<BreedDetailModel>> = favBreedDao.getSavedFavBreeds().collect()
     suspend fun getSavedFavouriteBreeds(){
     favBreedDao.getSavedFavBreeds().collect{
         _favouriteDogBreeds.value=it

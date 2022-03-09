@@ -35,8 +35,6 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
 
         val binding = DashboardFragmentBinding.inflate(inflater)
         binding.lifecycleOwner = this
-//        binding.favouriteBreedList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
-//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.favouriteBreedList.addItemDecoration(
             GridSpacingItemDecorationHelper(
                 1,
@@ -47,17 +45,12 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = dashboardViewModel
         binding.favouriteBreedList.adapter=dashboardViewModel.favBreedsListAdapter
-        lifecycle.coroutineScope.launch {
-            dashboardViewModel.getSavedFavouriteBreeds()
-        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        lifecycle.coroutineScope.launch {
-//           dashboardViewModel.getSavedFavouriteBreeds()
-//        }
     }
 
 
