@@ -51,7 +51,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/title_text_1x_margin" >
+                android:layout_margin="@dimen/title_text_1x_margin"
+                android:background="@drawable/basic_edit_border">
                 <TextView
                     android:id="@+id/textview_playGame"
                     android:layout_width="match_parent"
