@@ -46,7 +46,7 @@ class FirstFragment : Fragment() {
             )
         )
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_selectFavBreed)
+            findNavController().navigate(R.id.action_FirstFragment_to_dashboard)
         }
         return binding.root
 

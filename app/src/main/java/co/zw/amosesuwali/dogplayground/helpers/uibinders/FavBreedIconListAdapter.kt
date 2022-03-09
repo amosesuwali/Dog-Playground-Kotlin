@@ -15,7 +15,7 @@ import co.zw.amosesuwali.dogplayground.models.BreedDetailModel
 * data, including computing diffs between lists.
 */
 
-class FavBreedIconListAdapter: ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(
+class FavBreedIconListAdapter (private val onItemClicked: (BreedDetailModel) -> Unit): ListAdapter<BreedDetailModel, FavBreedIconListAdapter.FavBreedIconViewHolder>(
     DiffCallback
 ) {
 

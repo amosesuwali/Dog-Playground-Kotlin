@@ -14,6 +14,7 @@ import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
 import co.zw.amosesuwali.dogplayground.models.viewmodels.DashboardViewModel
 import co.zw.amosesuwali.dogplayground.models.viewmodels.DashboardViewModelFactory
 import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class Dashboard : Fragment() {
@@ -46,14 +47,17 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = dashboardViewModel
         binding.favouriteBreedList.adapter=dashboardViewModel.favBreedsListAdapter
+        lifecycle.coroutineScope.launch {
+            dashboardViewModel.getSavedFavouriteBreeds()
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lifecycle.coroutineScope.launch {
-           dashboardViewModel.getSavedFavouriteBreeds()
-        }
+//        lifecycle.coroutineScope.launch {
+//           dashboardViewModel.getSavedFavouriteBreeds()
+//        }
     }
 
 
