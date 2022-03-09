@@ -2,6 +2,7 @@
 .gradle
 /local.properties
 /.idea/caches
+/.idea
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
@@ -13,3 +14,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+.idea/misc.xml
+.idea/sonarlint/issuestore/0/6/0643eb3d6f55b923370d65b4af960e0119549ce0
+.idea/sonarlint/issuestore/6/4/648784a24239bd20d19462992c2d6b0b8e526610
+.idea/sonarlint/issuestore/index.pb

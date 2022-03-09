@@ -3,8 +3,6 @@
 Lapp/src/main/java/co/zw/amosesuwali/dogplayground/models/BreedDetailModel.kt,a\6\a62e61a6ec3fedf435bf29be5f535af44c6ff0f3
 v
 Fapp/src/main/java/co/zw/amosesuwali/dogplayground/models/DogPicture.kt,c\2\c23e77aba143b60ecdfd965b0bb1a255032c351e
-Ü
-Vapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BindingAdapters.kt,0\6\0643eb3d6f55b923370d65b4af960e0119549ce0
 Å
 Qapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/ProgressDialogHelper.kt,7\2\7210c18ba0864b1612e7838061403b18e6ac0fe5
 v
@@ -39,5 +37,3 @@ p
 [app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/FirstScreenViewModel.kt,5\a\5a2d94d80dc100a30da3945318c0101fdf631ef4
 á
 Wapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BreedListAdapter.kt,f\c\fc4efe82c5e1b4dd03954c2f73d6256bc512c3ce
-â
-Yapp/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/DashboardViewModel.kt,6/4/648784a24239bd20d19462992c2d6b0b8e526610
