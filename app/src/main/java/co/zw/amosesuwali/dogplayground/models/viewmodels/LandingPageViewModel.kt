@@ -3,20 +3,22 @@
 package co.zw.amosesuwali.dogplayground.models.viewmodels
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import co.zw.amosesuwali.dogplayground.models.Pictures
 import co.zw.amosesuwali.dogplayground.api.DogCeoApi
+import co.zw.amosesuwali.dogplayground.database.favBreed.FavBreedDao
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 enum class DogCeoApiStatus { LOADING, ERROR, DONE }
 
 /**
- * The [ViewModel] that is attached to the [OverviewFragment].
+ * The [ViewModel] that is attached to the LandingPage.
  */
-class FirstScreenViewModel : ViewModel() {
+class LandingPageViewModel(private val favBreedDao: FavBreedDao) : ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<DogCeoApiStatus>()
@@ -42,7 +44,7 @@ class FirstScreenViewModel : ViewModel() {
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      *  [List] [LiveData].
      */
-     fun getDogPhotos() {
+    private fun getDogPhotos() {
         viewModelScope.launch {
             _status.value = DogCeoApiStatus.LOADING
             try {
@@ -57,5 +59,22 @@ class FirstScreenViewModel : ViewModel() {
         }
     }
 
+    suspend fun isFavBreedListEmpty (): Boolean{
+        return GlobalScope.async() {
+            return@async favBreedDao.getFavouriteBreedsCount() < 1
+        }.await()
+    }
+
+    class LandingPageViewModelFactory(
+        private val favBreedDao: FavBreedDao
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(LandingPageViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return LandingPageViewModel(favBreedDao) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
+    }
 
 }

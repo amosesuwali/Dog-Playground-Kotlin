@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/breed_item_border"
-        tools:context=".FirstFragment">
+        tools:context=".LandingPage">
         <RelativeLayout
             android:id="@+id/dogImageView"
             android:layout_width="50dp"

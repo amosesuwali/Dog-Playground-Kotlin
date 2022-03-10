@@ -11,6 +11,10 @@ interface FavBreedDao {
 
     @Query("SELECT * FROM FavBreedEntity ORDER BY breedName ASC")
       fun getSavedFavBreeds(): Flow<List<BreedDetailModel>>
+
+    @Query("select COUNT(*) as favBreedCount  FROM FavBreedEntity ;")
+    fun getFavouriteBreedsCount(): Int
+
     @Insert
      fun insertAll(vararg favEntity: FavBreedEntity)
 

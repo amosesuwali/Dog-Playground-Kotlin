@@ -4,14 +4,14 @@
     <data>
         <variable
             name="viewModel"
-            type="co.zw.amosesuwali.dogplayground.models.viewmodels.FirstScreenViewModel" />
+            type="co.zw.amosesuwali.dogplayground.models.viewmodels.LandingPageViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
 
-    tools:context=".FirstFragment">
+    tools:context=".LandingPage">
 
 
     <androidx.recyclerview.widget.RecyclerView
