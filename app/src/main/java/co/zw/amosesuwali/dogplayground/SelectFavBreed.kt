@@ -63,16 +63,16 @@ class SelectFavBreed : Fragment() {
 
             runBlocking {
                 viewModel.addSelectedFavBreeds()
-                delay(233)
-                openNextPage()
+                delay(300)
             }
+            openNextPage()
 
 
         }
         return binding.root
     }
 //
-    fun openNextPage(){
+private fun openNextPage(){
     Log.d("Adding Fav to DB","We have finished thank you")
     dialog?.dismiss()
     findNavController().navigate(R.id.action_selectFavBreed_to_dashboard)

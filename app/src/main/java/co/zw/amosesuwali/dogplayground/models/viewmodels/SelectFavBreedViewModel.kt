@@ -106,12 +106,12 @@ class SelectFavBreedViewModel(private val favBreedDao: FavBreedDao) : ViewModel(
          }
     }
 
-    private val favBreedsRepository= FavBreedRepository(favBreedDao)
     fun addSelectedFavBreeds(){
-        GlobalScope.launch{
+        GlobalScope.async{
 //            favBreedDao.deleteAll()
             dogListAdapter.selectedBreeds.value?.forEach {
                 favBreedDao.insertAll(FavBreedEntity(0,it.breedName,getBreedImage(it.breedName)))
+                Log.d("ADDING >>>>>",it.breedName.toString())
             }
         }
 

@@ -12,7 +12,7 @@
         android:layout_height="45dp" />
     <TextView
         android:layout_width="wrap_content"
-        android:text="Loading..."
+        android:text="Just a second..."
         android:textAppearance="?android:textAppearanceSmall"
         android:layout_gravity="center_vertical"
         android:id="@+id/loading_msg"
