@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.fragment.findNavController
 import co.zw.amosesuwali.dogplayground.database.app.DogPlayGroundApplication
 import co.zw.amosesuwali.dogplayground.databinding.DashboardFragmentBinding
 import co.zw.amosesuwali.dogplayground.helpers.GridSpacingItemDecorationHelper
@@ -45,7 +46,12 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = dashboardViewModel
         binding.favouriteBreedList.adapter=dashboardViewModel.favBreedsListAdapter
-
+        binding.playGame.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_gameHome)
+        }
+        binding.buttonLearn.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboard_to_gameHome)
+        }
         return binding.root
     }
 

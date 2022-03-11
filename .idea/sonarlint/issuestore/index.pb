@@ -39,8 +39,6 @@ q
 Aapp/src/main/java/co/zw/amosesuwali/dogplayground/MainActivity.kt,a/f/afa86e59ef699b59b37a74ac790c16ba4b33d0ae
 ‡
 Wapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/PhotoGridAdapter.kt,6/3/6391ab1b71c914d1c15336d847cc2476a908587b
-r
-Bapp/src/main/java/co/zw/amosesuwali/dogplayground/FirstFragment.kt,c/5/c59ffbddc52cc993d34197d6394dc4ae26e1a390
 †
 Vapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BindingAdapters.kt,0/6/0643eb3d6f55b923370d65b4af960e0119549ce0
 :
@@ -50,17 +48,3 @@ Vapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BindingAdap
 ^app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/FavBreedIconListAdapter.kt,f/a/fad6b0c30d97876a24fbe6e160d2ede61c480838
 ‰
 Yapp/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/DashboardViewModel.kt,6/4/648784a24239bd20d19462992c2d6b0b8e526610
-n
->app/src/main/java/co/zw/amosesuwali/dogplayground/Dashboard.kt,e/8/e8faca0876e6ad43cf86990086905437a73d90f7
-m
-=app/src/main/java/co/zw/amosesuwali/dogplayground/GameHome.kt,0/2/02cc01d6d53f8daf47c436dea9ab668288c970b8
-‹
-[app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/LandingPageViewModel.kt,6/6/66c5eee7a4b61f360f2477e376ff85dc3418740e
-‚
-Rapp/src/main/java/co/zw/amosesuwali/dogplayground/database/favBreed/FavBreedDao.kt,f/5/f58017ecf8a9a2ffa20b3f19814b4342cdb8c013
-p
-@app/src/main/java/co/zw/amosesuwali/dogplayground/LandingPage.kt,8/a/8a1ddcc95fb87748cb680754b8b92e011d006311
-s
-Capp/src/main/java/co/zw/amosesuwali/dogplayground/SelectFavBreed.kt,c/b/cb59703a695e961522a0d12027e5f561a70319aa
-Ž
-^app/src/main/java/co/zw/amosesuwali/dogplayground/models/viewmodels/SelectFavBreedViewModel.kt,5/6/56c5484b1d5eafe3431d358755185e0d017912fc

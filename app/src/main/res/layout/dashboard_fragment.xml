@@ -84,7 +84,7 @@
                     app:layout_constraintTop_toBottomOf="@id/textview_playGame"
                     tools:targetApi="p" />
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_first"
+                    android:id="@+id/playGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/title_text_1x_margin"
@@ -146,7 +146,7 @@
                     app:layout_constraintTop_toBottomOf="@id/search_breed_textview"
                     tools:targetApi="p" />
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_firstgg"
+                    android:id="@+id/buttonLearn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/title_text_1x_margin"
@@ -157,7 +157,7 @@
                     android:textSize="@dimen/subtitle_text_font_size"
                     android:textFontWeight="100"
                     app:cornerRadius="@dimen/next_button_corner_radius"
-                    app:layout_constraintStart_toStartOf="@id/button_firstgg"
+                    app:layout_constraintStart_toStartOf="@id/buttonLearn"
                     app:layout_constraintTop_toBottomOf="@id/textview_secondgg"
                     tools:targetApi="p" />
             </androidx.constraintlayout.widget.ConstraintLayout>
