@@ -28,3 +28,5 @@ local.properties
 .idea/sonarlint/issuestore/index.pb
 .idea/sonarlint/issuestore/index.pb
 .idea/sonarlint/issuestore/index.pb
+build
+.idea

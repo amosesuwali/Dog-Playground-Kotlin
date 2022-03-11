@@ -50,7 +50,7 @@ private val dashboardViewModel: DashboardViewModel by activityViewModels {
             findNavController().navigate(R.id.action_dashboard_to_gameHome)
         }
         binding.buttonLearn.setOnClickListener {
-            findNavController().navigate(R.id.action_dashboard_to_gameHome)
+            findNavController().navigate(R.id.action_dashboard_to_breedDetail)
         }
         return binding.root
     }

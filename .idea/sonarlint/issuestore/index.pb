@@ -41,9 +41,6 @@ Aapp/src/main/java/co/zw/amosesuwali/dogplayground/MainActivity.kt,a/f/afa86e59
 Wapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/PhotoGridAdapter.kt,6/3/6391ab1b71c914d1c15336d847cc2476a908587b
 †
 Vapp/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/BindingAdapters.kt,0/6/0643eb3d6f55b923370d65b4af960e0119549ce0
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 Ž
 ^app/src/main/java/co/zw/amosesuwali/dogplayground/helpers/uibinders/FavBreedIconListAdapter.kt,f/a/fad6b0c30d97876a24fbe6e160d2ede61c480838
 ‰
