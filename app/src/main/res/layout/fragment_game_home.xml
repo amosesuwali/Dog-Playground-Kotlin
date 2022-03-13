@@ -3,6 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".GameHome">
+    <data>
+        <variable
+            name="viewModel"
+            type="co.zw.amosesuwali.dogplayground.models.viewmodels.LandingPageViewModel" />
+    </data>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photos_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:translationZ="-90dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:listData="@{viewModel.photos}"
+        app:spanCount="2"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:itemCount="16"
+        tools:listitem="@layout/basic_picture_item" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
