@@ -6,6 +6,7 @@
     <!--Play Game Text-->
     <string name="game_intro_title_text">Play Game!</string>
     <string name="game_intro_subtitle_text">Challenge yourself and learn more dog secrets.</string>
+    <string name="game_intro_subtitle_text_extra">Challenge yourself and learn more dog secrets.</string>
 
     <string name="select_breed_label_text">Select your favourite breeds below</string>
     <string name="search_breed_label_text">Search breeds</string>
